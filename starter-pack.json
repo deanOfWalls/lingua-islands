@@ -1,0 +1,2141 @@
+{
+  "metadata": {
+    "projectName": "LifeLingo",
+    "language": "Mandarin Chinese",
+    "level": "Complete Beginner Starter Pack",
+    "method": "Personal Language Islands",
+    "version": "1.0.0",
+    "description": "A beginner Mandarin starter pack built around real-life sentence islands, pinyin with tone marks, hanzi, literal translations, word breakdowns, sentence structure notes, usage notes, and reusable grammar patterns.",
+    "appInstructions": {
+      "sourceOfTruth": "This JSON file should drive the UI. Do not hardcode sentence content in app components.",
+      "primaryModes": [
+        "Island browsing",
+        "Flashcard recall",
+        "Sentence detail explanation",
+        "Pattern browsing",
+        "Audio/shadowing practice",
+        "Search/filter practice"
+      ],
+      "flashcardFlow": [
+        "Show english first.",
+        "User attempts to say Mandarin aloud.",
+        "Reveal hanzi, pinyin, literal meaning, structure notes, and breakdown.",
+        "User marks mastery from 0 to 4.",
+        "Persist mastery in localStorage by sentence id."
+      ],
+      "masteryScale": {
+        "0": "New",
+        "1": "Recognize it",
+        "2": "Can say slowly",
+        "3": "Can say naturally",
+        "4": "Automatic"
+      },
+      "audioInstructions": [
+        "Use SpeechSynthesis with zh-CN for MVP if available.",
+        "Speak the hanzi field, not pinyin.",
+        "Allow replay per sentence.",
+        "Allow shadowing mode where user hears Mandarin then repeats aloud.",
+        "audioUrl is reserved for future real audio files."
+      ],
+      "searchFields": [
+        "english",
+        "hanzi",
+        "pinyin",
+        "pinyinNumbered",
+        "literal",
+        "tags",
+        "islandId",
+        "patternIds"
+      ]
+    }
+  },
+  "islands": [
+    { "id": "relationship", "name": "Relationship / Girlfriend", "goal": "Daily partner communication and affection.", "priority": 1 },
+    { "id": "food", "name": "Food / Cooking", "goal": "Eating, cooking, groceries, and taste feedback.", "priority": 2 },
+    { "id": "routine", "name": "Morning / Night Routine", "goal": "Common waking up, sleeping, tiredness, and household rhythm.", "priority": 3 },
+    { "id": "home", "name": "Home / Daily Life", "goal": "Basic house, chores, objects, and daily actions.", "priority": 4 },
+    { "id": "work", "name": "Work / Programming", "goal": "Workday, meetings, code, bugs, and tech complaints.", "priority": 5 },
+    { "id": "opinions", "name": "Opinions / Personality", "goal": "Sound like yourself: opinions, disagreement, curiosity, jokes, reactions.", "priority": 6 },
+    { "id": "conversation", "name": "Conversation Control", "goal": "Ask for repetition, clarification, slower speech, and help.", "priority": 7 },
+    { "id": "shopping", "name": "Shopping / Errands", "goal": "Stores, buying things, needing things, and basic errands.", "priority": 8 },
+    { "id": "time", "name": "Time / Plans", "goal": "Today, tomorrow, later, soon, before/after, and simple plans.", "priority": 9 },
+    { "id": "survival", "name": "Survival Mandarin", "goal": "High-value beginner phrases for real-world interaction.", "priority": 10 }
+  ],
+  "patterns": [
+    {
+      "id": "svo",
+      "name": "Subject + Verb + Object",
+      "formula": "[subject] + [verb] + [object]",
+      "meaning": "Basic sentence order for many Mandarin sentences.",
+      "notes": "Often similar to English. Pronouns do not change form like I/me/my in English."
+    },
+    {
+      "id": "ma-question",
+      "name": "Yes/No Question With 吗",
+      "formula": "[statement] + 吗？",
+      "meaning": "Turns many statements into yes/no questions.",
+      "notes": "Do not use 吗 with question words like 什么 or 哪里."
+    },
+    {
+      "id": "le-change",
+      "name": "Change Of State With 了",
+      "formula": "[situation] + 了",
+      "meaning": "Shows something has become true or changed state.",
+      "notes": "At beginner level, learn it in fixed phrases like 我饿了, 我累了, 我困了."
+    },
+    {
+      "id": "wo-yao-action",
+      "name": "我要 + Action",
+      "formula": "我要 + [verb/action]",
+      "meaning": "I want to / I am going to.",
+      "notes": "要 can mean want, need, or intend depending on context."
+    },
+    {
+      "id": "wo-xiang-action",
+      "name": "我想 + Action",
+      "formula": "我想 + [verb/action]",
+      "meaning": "I want to / I feel like / I would like to.",
+      "notes": "Softer than 要. Also means miss when used with a person, as in 我想你了."
+    },
+    {
+      "id": "ni-xiang-question",
+      "name": "你想 + Action + 什么",
+      "formula": "你想 + [verb] + 什么？",
+      "meaning": "What do you want to... ?",
+      "notes": "High-value pattern for food, watching, buying, doing, and going."
+    },
+    {
+      "id": "hen-adjective",
+      "name": "很 + Adjective",
+      "formula": "[subject] + 很 + [adjective]",
+      "meaning": "Subject is adjective.",
+      "notes": "很 often acts as a natural linker before adjectives. It does not always mean very strongly."
+    },
+    {
+      "id": "verb-yixia",
+      "name": "Verb + 一下",
+      "formula": "[verb] + 一下",
+      "meaning": "Do an action briefly / once / for a moment.",
+      "notes": "Makes requests sound more casual and softer."
+    },
+    {
+      "id": "zai-location",
+      "name": "Location With 在",
+      "formula": "[thing/person] + 在 + [place/question location]",
+      "meaning": "Something/someone is located somewhere.",
+      "notes": "在哪里 means where."
+    },
+    {
+      "id": "de-possession",
+      "name": "Possession With 的",
+      "formula": "[owner] + 的 + [thing]",
+      "meaning": "Owner's thing / my / your / his / her.",
+      "notes": "我的手机 = my phone."
+    },
+    {
+      "id": "keyi-request",
+      "name": "Can You With 可以",
+      "formula": "你可以 + [action] + 吗？",
+      "meaning": "Can you / may you do something?",
+      "notes": "Useful for polite requests."
+    },
+    {
+      "id": "rang-wo-action",
+      "name": "Let Me With 让我",
+      "formula": "让我 + [action]",
+      "meaning": "Let me do something.",
+      "notes": "Common in phrases like 让我看看 and 让我想一下."
+    },
+    {
+      "id": "tai-adjective-le",
+      "name": "Too Adjective With 太...了",
+      "formula": "太 + [adjective] + 了",
+      "meaning": "Too / very adjective.",
+      "notes": "Common for reactions: 太辣了, 太贵了, 太好了."
+    },
+    {
+      "id": "negative-bu",
+      "name": "Negation With 不",
+      "formula": "不 + [verb/adjective]",
+      "meaning": "Not / do not.",
+      "notes": "Common negation. 不 changes tone before fourth tone in speech, but pinyin may still be written as bù."
+    },
+    {
+      "id": "mei-you",
+      "name": "Do Not Have / There Is Not With 没有",
+      "formula": "没有 + [thing/action]",
+      "meaning": "Do not have / there is not / did not.",
+      "notes": "Useful beginner phrase: 没有 = don't have / no."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "relationship-001",
+      "islandId": "relationship",
+      "english": "I love you.",
+      "meaning": "I love you.",
+      "hanzi": "我爱你。",
+      "pinyin": "wǒ ài nǐ",
+      "pinyinNumbered": "wo3 ai4 ni3",
+      "literal": "I love you.",
+      "difficulty": 1,
+      "tags": ["relationship", "affection", "svo"],
+      "patternIds": ["svo"],
+      "breakdown": [
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "I / me" },
+        { "hanzi": "爱", "pinyin": "ài", "meaning": "love" },
+        { "hanzi": "你", "pinyin": "nǐ", "meaning": "you" }
+      ],
+      "structureNotes": "Simple Subject + Verb + Object sentence.",
+      "usageNotes": "Direct and common. Romantic, serious, or affectionate depending on context.",
+      "examples": [
+        { "hanzi": "我喜欢你。", "pinyin": "wǒ xǐ huān nǐ", "english": "I like you." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "relationship-002",
+      "islandId": "relationship",
+      "english": "I miss you.",
+      "meaning": "I miss you.",
+      "hanzi": "我想你了。",
+      "pinyin": "wǒ xiǎng nǐ le",
+      "pinyinNumbered": "wo3 xiang3 ni3 le5",
+      "literal": "I think/miss you now.",
+      "difficulty": 1,
+      "tags": ["relationship", "affection", "le"],
+      "patternIds": ["wo-xiang-action", "le-change"],
+      "breakdown": [
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "I" },
+        { "hanzi": "想", "pinyin": "xiǎng", "meaning": "think of / miss / want" },
+        { "hanzi": "你", "pinyin": "nǐ", "meaning": "you" },
+        { "hanzi": "了", "pinyin": "le", "meaning": "change/current state marker" }
+      ],
+      "structureNotes": "想 + person means miss that person. 了 makes it feel like 'I miss you now.'",
+      "usageNotes": "Natural affectionate phrase for a partner.",
+      "examples": [
+        { "hanzi": "我想家了。", "pinyin": "wǒ xiǎng jiā le", "english": "I miss home." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "relationship-003",
+      "islandId": "relationship",
+      "english": "Come here.",
+      "meaning": "Come here.",
+      "hanzi": "过来。",
+      "pinyin": "guò lái",
+      "pinyinNumbered": "guo4 lai2",
+      "literal": "come over",
+      "difficulty": 1,
+      "tags": ["relationship", "command", "daily"],
+      "patternIds": [],
+      "breakdown": [
+        { "hanzi": "过", "pinyin": "guò", "meaning": "cross / come over" },
+        { "hanzi": "来", "pinyin": "lái", "meaning": "come" }
+      ],
+      "structureNotes": "A short directional phrase. No subject is needed in casual commands.",
+      "usageNotes": "Casual. Tone matters; can sound affectionate or bossy depending on delivery.",
+      "examples": [
+        { "hanzi": "你过来。", "pinyin": "nǐ guò lái", "english": "You come here." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "relationship-004",
+      "islandId": "relationship",
+      "english": "Give me a kiss.",
+      "meaning": "Give me a quick kiss.",
+      "hanzi": "给我亲一下。",
+      "pinyin": "gěi wǒ qīn yí xià",
+      "pinyinNumbered": "gei3 wo3 qin1 yi2 xia4",
+      "literal": "Give me kiss one brief action.",
+      "difficulty": 2,
+      "tags": ["relationship", "affection", "request", "kiss"],
+      "patternIds": ["verb-yixia"],
+      "breakdown": [
+        { "hanzi": "给", "pinyin": "gěi", "meaning": "give" },
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "me" },
+        { "hanzi": "亲", "pinyin": "qīn", "meaning": "kiss" },
+        { "hanzi": "一下", "pinyin": "yí xià", "meaning": "briefly / once / a little" }
+      ],
+      "structureNotes": "给我 means give me. 亲一下 softens the action into 'kiss me once / give a quick kiss.'",
+      "usageNotes": "More natural and casual than 给我亲吻. Between couples, 亲我一下 is also natural.",
+      "examples": [
+        { "hanzi": "亲我一下。", "pinyin": "qīn wǒ yí xià", "english": "Kiss me." },
+        { "hanzi": "看一下。", "pinyin": "kàn yí xià", "english": "Take a look." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "relationship-005",
+      "islandId": "relationship",
+      "english": "Give me a hug.",
+      "meaning": "Give me a hug.",
+      "hanzi": "抱我一下。",
+      "pinyin": "bào wǒ yí xià",
+      "pinyinNumbered": "bao4 wo3 yi2 xia4",
+      "literal": "Hug me briefly.",
+      "difficulty": 2,
+      "tags": ["relationship", "affection", "request"],
+      "patternIds": ["verb-yixia"],
+      "breakdown": [
+        { "hanzi": "抱", "pinyin": "bào", "meaning": "hug / hold" },
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "me" },
+        { "hanzi": "一下", "pinyin": "yí xià", "meaning": "briefly / once" }
+      ],
+      "structureNotes": "Verb + person + 一下 can make an affectionate request.",
+      "usageNotes": "Natural with a partner or close family.",
+      "examples": [
+        { "hanzi": "亲我一下。", "pinyin": "qīn wǒ yí xià", "english": "Kiss me." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "relationship-006",
+      "islandId": "relationship",
+      "english": "You are cute.",
+      "meaning": "You are cute.",
+      "hanzi": "你很可爱。",
+      "pinyin": "nǐ hěn kě ài",
+      "pinyinNumbered": "ni3 hen3 ke3 ai4",
+      "literal": "You very cute.",
+      "difficulty": 1,
+      "tags": ["relationship", "compliment", "adjective"],
+      "patternIds": ["hen-adjective"],
+      "breakdown": [
+        { "hanzi": "你", "pinyin": "nǐ", "meaning": "you" },
+        { "hanzi": "很", "pinyin": "hěn", "meaning": "very / natural adjective linker" },
+        { "hanzi": "可爱", "pinyin": "kě ài", "meaning": "cute" }
+      ],
+      "structureNotes": "Mandarin often uses 很 before adjectives where English uses 'is/are.'",
+      "usageNotes": "Natural compliment. Do not say 你是可爱 in normal speech.",
+      "examples": [
+        { "hanzi": "你很漂亮。", "pinyin": "nǐ hěn piào liang", "english": "You are beautiful." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "relationship-007",
+      "islandId": "relationship",
+      "english": "You are annoying.",
+      "meaning": "You are annoying.",
+      "hanzi": "你很烦。",
+      "pinyin": "nǐ hěn fán",
+      "pinyinNumbered": "ni3 hen3 fan2",
+      "literal": "You very annoying.",
+      "difficulty": 1,
+      "tags": ["relationship", "joking", "adjective"],
+      "patternIds": ["hen-adjective"],
+      "breakdown": [
+        { "hanzi": "你", "pinyin": "nǐ", "meaning": "you" },
+        { "hanzi": "很", "pinyin": "hěn", "meaning": "very / adjective linker" },
+        { "hanzi": "烦", "pinyin": "fán", "meaning": "annoying / bothersome" }
+      ],
+      "structureNotes": "Subject + 很 + adjective.",
+      "usageNotes": "Can be playful or rude depending on tone and relationship.",
+      "examples": [
+        { "hanzi": "这个很烦。", "pinyin": "zhè ge hěn fán", "english": "This is annoying." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "relationship-008",
+      "islandId": "relationship",
+      "english": "I am joking.",
+      "meaning": "I am joking.",
+      "hanzi": "我开玩笑的。",
+      "pinyin": "wǒ kāi wán xiào de",
+      "pinyinNumbered": "wo3 kai1 wan2 xiao4 de5",
+      "literal": "I joke [it is].",
+      "difficulty": 2,
+      "tags": ["relationship", "joke", "conversation"],
+      "patternIds": [],
+      "breakdown": [
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "I" },
+        { "hanzi": "开玩笑", "pinyin": "kāi wán xiào", "meaning": "joke / make a joke" },
+        { "hanzi": "的", "pinyin": "de", "meaning": "emphasis/explanatory particle here" }
+      ],
+      "structureNotes": "This is a common fixed phrase. Treat it as one chunk at first.",
+      "usageNotes": "Useful when teasing someone or clarifying that you were not serious.",
+      "examples": [
+        { "hanzi": "别生气，我开玩笑的。", "pinyin": "bié shēng qì, wǒ kāi wán xiào de", "english": "Don't be mad, I am joking." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "relationship-009",
+      "islandId": "relationship",
+      "english": "Are you mad?",
+      "meaning": "Are you angry?",
+      "hanzi": "你生气了吗？",
+      "pinyin": "nǐ shēng qì le ma",
+      "pinyinNumbered": "ni3 sheng1 qi4 le5 ma5",
+      "literal": "You angry now question?",
+      "difficulty": 2,
+      "tags": ["relationship", "question", "emotion"],
+      "patternIds": ["ma-question", "le-change"],
+      "breakdown": [
+        { "hanzi": "你", "pinyin": "nǐ", "meaning": "you" },
+        { "hanzi": "生气", "pinyin": "shēng qì", "meaning": "angry" },
+        { "hanzi": "了", "pinyin": "le", "meaning": "changed state / now" },
+        { "hanzi": "吗", "pinyin": "ma", "meaning": "yes/no question marker" }
+      ],
+      "structureNotes": "Statement + 了吗 asks if a state has become true.",
+      "usageNotes": "Useful but potentially sensitive. Tone matters.",
+      "examples": [
+        { "hanzi": "你累了吗？", "pinyin": "nǐ lèi le ma", "english": "Are you tired?" }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "relationship-010",
+      "islandId": "relationship",
+      "english": "What's wrong?",
+      "meaning": "What's wrong? / What happened?",
+      "hanzi": "怎么了？",
+      "pinyin": "zěn me le",
+      "pinyinNumbered": "zen3 me5 le5",
+      "literal": "How/what happened?",
+      "difficulty": 1,
+      "tags": ["relationship", "question", "conversation"],
+      "patternIds": ["le-change"],
+      "breakdown": [
+        { "hanzi": "怎么", "pinyin": "zěn me", "meaning": "how / what" },
+        { "hanzi": "了", "pinyin": "le", "meaning": "changed situation marker" }
+      ],
+      "structureNotes": "Fixed everyday phrase. Learn as one chunk.",
+      "usageNotes": "Very common when someone seems upset or something happened.",
+      "examples": [
+        { "hanzi": "你怎么了？", "pinyin": "nǐ zěn me le", "english": "What's wrong with you? / What happened to you?" }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "relationship-011",
+      "islandId": "relationship",
+      "english": "Tell me.",
+      "meaning": "Tell me.",
+      "hanzi": "告诉我。",
+      "pinyin": "gào sù wǒ",
+      "pinyinNumbered": "gao4 su4 wo3",
+      "literal": "Tell me.",
+      "difficulty": 2,
+      "tags": ["relationship", "conversation", "request"],
+      "patternIds": ["svo"],
+      "breakdown": [
+        { "hanzi": "告诉", "pinyin": "gào sù", "meaning": "tell" },
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "me" }
+      ],
+      "structureNotes": "Verb + object. Subject is omitted because context is obvious.",
+      "usageNotes": "Can sound direct. Add 吧 or tone softening if needed.",
+      "examples": [
+        { "hanzi": "告诉我发生什么了。", "pinyin": "gào sù wǒ fā shēng shén me le", "english": "Tell me what happened." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "relationship-012",
+      "islandId": "relationship",
+      "english": "Stop stealing my blanket.",
+      "meaning": "Don't steal/grab my blanket.",
+      "hanzi": "不要抢我的被子。",
+      "pinyin": "bú yào qiǎng wǒ de bèi zi",
+      "pinyinNumbered": "bu2 yao4 qiang3 wo3 de5 bei4 zi5",
+      "literal": "Don't grab my blanket.",
+      "difficulty": 3,
+      "tags": ["relationship", "home", "joking", "negative"],
+      "patternIds": ["negative-bu", "de-possession"],
+      "breakdown": [
+        { "hanzi": "不要", "pinyin": "bú yào", "meaning": "don't / do not" },
+        { "hanzi": "抢", "pinyin": "qiǎng", "meaning": "grab / snatch" },
+        { "hanzi": "我的", "pinyin": "wǒ de", "meaning": "my" },
+        { "hanzi": "被子", "pinyin": "bèi zi", "meaning": "blanket / quilt" }
+      ],
+      "structureNotes": "不要 + verb tells someone not to do something.",
+      "usageNotes": "Useful playful couple phrase. 抢 means snatch/grab, not necessarily literally steal.",
+      "examples": [
+        { "hanzi": "不要动。", "pinyin": "bú yào dòng", "english": "Don't move." }
+      ],
+      "audioUrl": ""
+    },
+
+    {
+      "id": "food-001",
+      "islandId": "food",
+      "english": "Are you hungry?",
+      "meaning": "Are you hungry?",
+      "hanzi": "你饿了吗？",
+      "pinyin": "nǐ è le ma",
+      "pinyinNumbered": "ni3 e4 le5 ma5",
+      "literal": "You hungry now question?",
+      "difficulty": 1,
+      "tags": ["food", "question", "hungry"],
+      "patternIds": ["ma-question", "le-change"],
+      "breakdown": [
+        { "hanzi": "你", "pinyin": "nǐ", "meaning": "you" },
+        { "hanzi": "饿", "pinyin": "è", "meaning": "hungry" },
+        { "hanzi": "了", "pinyin": "le", "meaning": "changed state / now" },
+        { "hanzi": "吗", "pinyin": "ma", "meaning": "question marker" }
+      ],
+      "structureNotes": "State + 了吗 asks whether someone has become that state.",
+      "usageNotes": "Very common daily phrase.",
+      "examples": [
+        { "hanzi": "我饿了。", "pinyin": "wǒ è le", "english": "I am hungry." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "food-002",
+      "islandId": "food",
+      "english": "I am hungry.",
+      "meaning": "I am hungry.",
+      "hanzi": "我饿了。",
+      "pinyin": "wǒ è le",
+      "pinyinNumbered": "wo3 e4 le5",
+      "literal": "I hungry now.",
+      "difficulty": 1,
+      "tags": ["food", "hungry", "state"],
+      "patternIds": ["le-change"],
+      "breakdown": [
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "I" },
+        { "hanzi": "饿", "pinyin": "è", "meaning": "hungry" },
+        { "hanzi": "了", "pinyin": "le", "meaning": "changed state / now" }
+      ],
+      "structureNotes": "No 'am' is needed. Mandarin can say 'I hungry now.'",
+      "usageNotes": "Use when you became hungry or are hungry now.",
+      "examples": [
+        { "hanzi": "我累了。", "pinyin": "wǒ lèi le", "english": "I am tired." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "food-003",
+      "islandId": "food",
+      "english": "What do you want to eat?",
+      "meaning": "What do you want to eat?",
+      "hanzi": "你想吃什么？",
+      "pinyin": "nǐ xiǎng chī shén me",
+      "pinyinNumbered": "ni3 xiang3 chi1 shen2 me5",
+      "literal": "You want eat what?",
+      "difficulty": 1,
+      "tags": ["food", "question", "want", "eat"],
+      "patternIds": ["ni-xiang-question"],
+      "breakdown": [
+        { "hanzi": "你", "pinyin": "nǐ", "meaning": "you" },
+        { "hanzi": "想", "pinyin": "xiǎng", "meaning": "want / feel like" },
+        { "hanzi": "吃", "pinyin": "chī", "meaning": "eat" },
+        { "hanzi": "什么", "pinyin": "shén me", "meaning": "what" }
+      ],
+      "structureNotes": "Question words usually stay where the answer would go. Literally: you want eat what?",
+      "usageNotes": "Essential food phrase.",
+      "examples": [
+        { "hanzi": "你想喝什么？", "pinyin": "nǐ xiǎng hē shén me", "english": "What do you want to drink?" }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "food-004",
+      "islandId": "food",
+      "english": "What should we cook tonight?",
+      "meaning": "What should we cook tonight?",
+      "hanzi": "今天晚上我们做什么饭？",
+      "pinyin": "jīn tiān wǎn shang wǒ men zuò shén me fàn",
+      "pinyinNumbered": "jin1 tian1 wan3 shang5 wo3 men5 zuo4 shen2 me5 fan4",
+      "literal": "Today evening we make what meal?",
+      "difficulty": 3,
+      "tags": ["food", "cooking", "question", "tonight"],
+      "patternIds": [],
+      "breakdown": [
+        { "hanzi": "今天晚上", "pinyin": "jīn tiān wǎn shang", "meaning": "tonight" },
+        { "hanzi": "我们", "pinyin": "wǒ men", "meaning": "we / us" },
+        { "hanzi": "做", "pinyin": "zuò", "meaning": "make / do / cook" },
+        { "hanzi": "什么", "pinyin": "shén me", "meaning": "what" },
+        { "hanzi": "饭", "pinyin": "fàn", "meaning": "meal / cooked rice" }
+      ],
+      "structureNotes": "Time phrase often comes at the beginning. 什么 stays where the unknown thing belongs.",
+      "usageNotes": "Natural household dinner-planning sentence.",
+      "examples": [
+        { "hanzi": "我们吃什么？", "pinyin": "wǒ men chī shén me", "english": "What are we eating?" }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "food-005",
+      "islandId": "food",
+      "english": "I am cooking.",
+      "meaning": "I am cooking.",
+      "hanzi": "我在做饭。",
+      "pinyin": "wǒ zài zuò fàn",
+      "pinyinNumbered": "wo3 zai4 zuo4 fan4",
+      "literal": "I am-at making food.",
+      "difficulty": 2,
+      "tags": ["food", "cooking", "progressive"],
+      "patternIds": [],
+      "breakdown": [
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "I" },
+        { "hanzi": "在", "pinyin": "zài", "meaning": "currently doing / at" },
+        { "hanzi": "做饭", "pinyin": "zuò fàn", "meaning": "cook / make food" }
+      ],
+      "structureNotes": "在 before an action can show the action is happening now.",
+      "usageNotes": "General phrase for cooking a meal.",
+      "examples": [
+        { "hanzi": "我在工作。", "pinyin": "wǒ zài gōng zuò", "english": "I am working." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "food-006",
+      "islandId": "food",
+      "english": "Dinner is almost ready.",
+      "meaning": "Dinner is almost ready.",
+      "hanzi": "晚饭快好了。",
+      "pinyin": "wǎn fàn kuài hǎo le",
+      "pinyinNumbered": "wan3 fan4 kuai4 hao3 le5",
+      "literal": "Dinner soon good/done now.",
+      "difficulty": 2,
+      "tags": ["food", "cooking", "dinner"],
+      "patternIds": ["le-change"],
+      "breakdown": [
+        { "hanzi": "晚饭", "pinyin": "wǎn fàn", "meaning": "dinner" },
+        { "hanzi": "快", "pinyin": "kuài", "meaning": "soon / almost" },
+        { "hanzi": "好了", "pinyin": "hǎo le", "meaning": "done / ready" }
+      ],
+      "structureNotes": "快...了 means something is about to happen or almost in a state.",
+      "usageNotes": "Natural cooking phrase.",
+      "examples": [
+        { "hanzi": "我快好了。", "pinyin": "wǒ kuài hǎo le", "english": "I am almost ready." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "food-007",
+      "islandId": "food",
+      "english": "Taste this.",
+      "meaning": "Taste this.",
+      "hanzi": "尝一下这个。",
+      "pinyin": "cháng yí xià zhè ge",
+      "pinyinNumbered": "chang2 yi2 xia4 zhe4 ge5",
+      "literal": "Taste briefly this.",
+      "difficulty": 2,
+      "tags": ["food", "taste", "request"],
+      "patternIds": ["verb-yixia"],
+      "breakdown": [
+        { "hanzi": "尝", "pinyin": "cháng", "meaning": "taste" },
+        { "hanzi": "一下", "pinyin": "yí xià", "meaning": "briefly / a little" },
+        { "hanzi": "这个", "pinyin": "zhè ge", "meaning": "this" }
+      ],
+      "structureNotes": "Verb + 一下 makes the action casual/brief.",
+      "usageNotes": "Use when asking someone to try food.",
+      "examples": [
+        { "hanzi": "看一下这个。", "pinyin": "kàn yí xià zhè ge", "english": "Look at this." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "food-008",
+      "islandId": "food",
+      "english": "Is it good?",
+      "meaning": "Does it taste good?",
+      "hanzi": "好吃吗？",
+      "pinyin": "hǎo chī ma",
+      "pinyinNumbered": "hao3 chi1 ma5",
+      "literal": "Good-to-eat question?",
+      "difficulty": 1,
+      "tags": ["food", "question", "taste"],
+      "patternIds": ["ma-question"],
+      "breakdown": [
+        { "hanzi": "好吃", "pinyin": "hǎo chī", "meaning": "tasty / good to eat" },
+        { "hanzi": "吗", "pinyin": "ma", "meaning": "question marker" }
+      ],
+      "structureNotes": "Adjective/description + 吗 makes a yes/no question.",
+      "usageNotes": "Use for food taste. Do not use 好 for food as naturally as 好吃.",
+      "examples": [
+        { "hanzi": "很好吃。", "pinyin": "hěn hǎo chī", "english": "It is delicious." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "food-009",
+      "islandId": "food",
+      "english": "Too spicy.",
+      "meaning": "It is too spicy.",
+      "hanzi": "太辣了。",
+      "pinyin": "tài là le",
+      "pinyinNumbered": "tai4 la4 le5",
+      "literal": "Too spicy now.",
+      "difficulty": 1,
+      "tags": ["food", "spicy", "reaction"],
+      "patternIds": ["tai-adjective-le"],
+      "breakdown": [
+        { "hanzi": "太", "pinyin": "tài", "meaning": "too / very" },
+        { "hanzi": "辣", "pinyin": "là", "meaning": "spicy" },
+        { "hanzi": "了", "pinyin": "le", "meaning": "intensifies/completes reaction" }
+      ],
+      "structureNotes": "太 + adjective + 了 is a common reaction pattern.",
+      "usageNotes": "Useful at meals.",
+      "examples": [
+        { "hanzi": "太咸了。", "pinyin": "tài xián le", "english": "Too salty." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "food-010",
+      "islandId": "food",
+      "english": "I am full.",
+      "meaning": "I am full.",
+      "hanzi": "我饱了。",
+      "pinyin": "wǒ bǎo le",
+      "pinyinNumbered": "wo3 bao3 le5",
+      "literal": "I full now.",
+      "difficulty": 1,
+      "tags": ["food", "full", "state"],
+      "patternIds": ["le-change"],
+      "breakdown": [
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "I" },
+        { "hanzi": "饱", "pinyin": "bǎo", "meaning": "full from eating" },
+        { "hanzi": "了", "pinyin": "le", "meaning": "now / changed state" }
+      ],
+      "structureNotes": "No 'am' needed. State + 了 means the state is now true.",
+      "usageNotes": "Common after eating.",
+      "examples": [
+        { "hanzi": "我饿了。", "pinyin": "wǒ è le", "english": "I am hungry." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "food-011",
+      "islandId": "food",
+      "english": "Let's buy groceries.",
+      "meaning": "Let's go buy groceries/food.",
+      "hanzi": "我们去买菜吧。",
+      "pinyin": "wǒ men qù mǎi cài ba",
+      "pinyinNumbered": "wo3 men5 qu4 mai3 cai4 ba5",
+      "literal": "We go buy vegetables/food suggestion.",
+      "difficulty": 2,
+      "tags": ["food", "shopping", "suggestion"],
+      "patternIds": [],
+      "breakdown": [
+        { "hanzi": "我们", "pinyin": "wǒ men", "meaning": "we" },
+        { "hanzi": "去", "pinyin": "qù", "meaning": "go" },
+        { "hanzi": "买菜", "pinyin": "mǎi cài", "meaning": "buy groceries / buy food" },
+        { "hanzi": "吧", "pinyin": "ba", "meaning": "suggestion softener" }
+      ],
+      "structureNotes": "吧 often softens a suggestion, like 'let's...' or 'okay?'",
+      "usageNotes": "买菜 literally means buy vegetables, but commonly means grocery shopping/food shopping.",
+      "examples": [
+        { "hanzi": "我们走吧。", "pinyin": "wǒ men zǒu ba", "english": "Let's go." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "food-012",
+      "islandId": "food",
+      "english": "Do we need anything?",
+      "meaning": "Do we need to buy anything?",
+      "hanzi": "我们需要买什么吗？",
+      "pinyin": "wǒ men xū yào mǎi shén me ma",
+      "pinyinNumbered": "wo3 men5 xu1 yao4 mai3 shen2 me5 ma5",
+      "literal": "We need buy anything question?",
+      "difficulty": 3,
+      "tags": ["food", "shopping", "question", "need"],
+      "patternIds": ["ma-question"],
+      "breakdown": [
+        { "hanzi": "我们", "pinyin": "wǒ men", "meaning": "we" },
+        { "hanzi": "需要", "pinyin": "xū yào", "meaning": "need" },
+        { "hanzi": "买", "pinyin": "mǎi", "meaning": "buy" },
+        { "hanzi": "什么", "pinyin": "shén me", "meaning": "what / anything" },
+        { "hanzi": "吗", "pinyin": "ma", "meaning": "question marker" }
+      ],
+      "structureNotes": "什么 can mean 'what' or 'anything' depending on context. This sentence is understandable and useful.",
+      "usageNotes": "A more natural alternative: 还要买什么吗？= Do we still need to buy anything?",
+      "examples": [
+        { "hanzi": "还要买什么吗？", "pinyin": "hái yào mǎi shén me ma", "english": "Do we still need to buy anything?" }
+      ],
+      "audioUrl": ""
+    },
+
+    {
+      "id": "routine-001",
+      "islandId": "routine",
+      "english": "Good morning.",
+      "meaning": "Good morning.",
+      "hanzi": "早上好。",
+      "pinyin": "zǎo shang hǎo",
+      "pinyinNumbered": "zao3 shang5 hao3",
+      "literal": "Morning good.",
+      "difficulty": 1,
+      "tags": ["routine", "morning", "greeting"],
+      "patternIds": [],
+      "breakdown": [
+        { "hanzi": "早上", "pinyin": "zǎo shang", "meaning": "morning" },
+        { "hanzi": "好", "pinyin": "hǎo", "meaning": "good" }
+      ],
+      "structureNotes": "Fixed greeting phrase.",
+      "usageNotes": "早 is also commonly used casually for morning greeting.",
+      "examples": [
+        { "hanzi": "早。", "pinyin": "zǎo", "english": "Morning." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "routine-002",
+      "islandId": "routine",
+      "english": "Did you sleep well?",
+      "meaning": "Did you sleep well?",
+      "hanzi": "你睡得好吗？",
+      "pinyin": "nǐ shuì de hǎo ma",
+      "pinyinNumbered": "ni3 shui4 de5 hao3 ma5",
+      "literal": "You slept to-good question?",
+      "difficulty": 3,
+      "tags": ["routine", "morning", "question", "sleep"],
+      "patternIds": ["ma-question"],
+      "breakdown": [
+        { "hanzi": "你", "pinyin": "nǐ", "meaning": "you" },
+        { "hanzi": "睡", "pinyin": "shuì", "meaning": "sleep" },
+        { "hanzi": "得", "pinyin": "de", "meaning": "degree/result connector" },
+        { "hanzi": "好", "pinyin": "hǎo", "meaning": "well / good" },
+        { "hanzi": "吗", "pinyin": "ma", "meaning": "question marker" }
+      ],
+      "structureNotes": "Verb + 得 + adjective describes how well an action was done.",
+      "usageNotes": "Natural morning question. Treat 睡得好 as 'sleep well' chunk at first.",
+      "examples": [
+        { "hanzi": "我睡得不好。", "pinyin": "wǒ shuì de bù hǎo", "english": "I did not sleep well." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "routine-003",
+      "islandId": "routine",
+      "english": "I am tired.",
+      "meaning": "I am tired.",
+      "hanzi": "我累了。",
+      "pinyin": "wǒ lèi le",
+      "pinyinNumbered": "wo3 lei4 le5",
+      "literal": "I tired now.",
+      "difficulty": 1,
+      "tags": ["routine", "tired", "state"],
+      "patternIds": ["le-change"],
+      "breakdown": [
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "I" },
+        { "hanzi": "累", "pinyin": "lèi", "meaning": "tired" },
+        { "hanzi": "了", "pinyin": "le", "meaning": "now / changed state" }
+      ],
+      "structureNotes": "No 'am' needed. State + 了 means the state is now true.",
+      "usageNotes": "One of the highest-frequency daily phrases.",
+      "examples": [
+        { "hanzi": "你累了吗？", "pinyin": "nǐ lèi le ma", "english": "Are you tired?" }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "routine-004",
+      "islandId": "routine",
+      "english": "I am sleepy.",
+      "meaning": "I am sleepy.",
+      "hanzi": "我困了。",
+      "pinyin": "wǒ kùn le",
+      "pinyinNumbered": "wo3 kun4 le5",
+      "literal": "I sleepy now.",
+      "difficulty": 1,
+      "tags": ["routine", "sleepy", "state"],
+      "patternIds": ["le-change"],
+      "breakdown": [
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "I" },
+        { "hanzi": "困", "pinyin": "kùn", "meaning": "sleepy" },
+        { "hanzi": "了", "pinyin": "le", "meaning": "now / changed state" }
+      ],
+      "structureNotes": "困 means sleepy, not maybe. 可能 means maybe.",
+      "usageNotes": "Use when you are sleepy and want to sleep.",
+      "examples": [
+        { "hanzi": "我累了。", "pinyin": "wǒ lèi le", "english": "I am tired." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "routine-005",
+      "islandId": "routine",
+      "english": "I am going to sleep.",
+      "meaning": "I am going to sleep.",
+      "hanzi": "我要睡觉了。",
+      "pinyin": "wǒ yào shuì jiào le",
+      "pinyinNumbered": "wo3 yao4 shui4 jiao4 le5",
+      "literal": "I want/go-to sleep now.",
+      "difficulty": 2,
+      "tags": ["routine", "sleep", "want"],
+      "patternIds": ["wo-yao-action", "le-change"],
+      "breakdown": [
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "I" },
+        { "hanzi": "要", "pinyin": "yào", "meaning": "want / going to" },
+        { "hanzi": "睡觉", "pinyin": "shuì jiào", "meaning": "sleep" },
+        { "hanzi": "了", "pinyin": "le", "meaning": "now / change" }
+      ],
+      "structureNotes": "我要 + action means I want/am going to do the action. 了 adds 'now/about to.'",
+      "usageNotes": "Natural before going to bed.",
+      "examples": [
+        { "hanzi": "我要工作了。", "pinyin": "wǒ yào gōng zuò le", "english": "I am going to work now." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "routine-006",
+      "islandId": "routine",
+      "english": "Good night.",
+      "meaning": "Good night.",
+      "hanzi": "晚安。",
+      "pinyin": "wǎn ān",
+      "pinyinNumbered": "wan3 an1",
+      "literal": "Evening peace.",
+      "difficulty": 1,
+      "tags": ["routine", "night", "greeting"],
+      "patternIds": [],
+      "breakdown": [
+        { "hanzi": "晚", "pinyin": "wǎn", "meaning": "evening / night" },
+        { "hanzi": "安", "pinyin": "ān", "meaning": "peace / safe" }
+      ],
+      "structureNotes": "Fixed greeting/goodbye phrase before sleep.",
+      "usageNotes": "Common with partner/family/friends before bed.",
+      "examples": [
+        { "hanzi": "明天见。", "pinyin": "míng tiān jiàn", "english": "See you tomorrow." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "routine-007",
+      "islandId": "routine",
+      "english": "Turn off the light.",
+      "meaning": "Turn off the light.",
+      "hanzi": "关灯。",
+      "pinyin": "guān dēng",
+      "pinyinNumbered": "guan1 deng1",
+      "literal": "Close light.",
+      "difficulty": 1,
+      "tags": ["routine", "home", "command"],
+      "patternIds": [],
+      "breakdown": [
+        { "hanzi": "关", "pinyin": "guān", "meaning": "close / turn off" },
+        { "hanzi": "灯", "pinyin": "dēng", "meaning": "light / lamp" }
+      ],
+      "structureNotes": "Mandarin uses 关 for turning off lights/devices.",
+      "usageNotes": "Short command. Add 一下 for softer request: 关一下灯.",
+      "examples": [
+        { "hanzi": "开灯。", "pinyin": "kāi dēng", "english": "Turn on the light." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "routine-008",
+      "islandId": "routine",
+      "english": "I need coffee.",
+      "meaning": "I need coffee.",
+      "hanzi": "我需要咖啡。",
+      "pinyin": "wǒ xū yào kā fēi",
+      "pinyinNumbered": "wo3 xu1 yao4 ka1 fei1",
+      "literal": "I need coffee.",
+      "difficulty": 2,
+      "tags": ["routine", "coffee", "need"],
+      "patternIds": ["svo"],
+      "breakdown": [
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "I" },
+        { "hanzi": "需要", "pinyin": "xū yào", "meaning": "need" },
+        { "hanzi": "咖啡", "pinyin": "kā fēi", "meaning": "coffee" }
+      ],
+      "structureNotes": "Subject + need + object.",
+      "usageNotes": "Straightforward and useful. 我想喝咖啡 means I want to drink coffee.",
+      "examples": [
+        { "hanzi": "我想喝咖啡。", "pinyin": "wǒ xiǎng hē kā fēi", "english": "I want to drink coffee." }
+      ],
+      "audioUrl": ""
+    },
+
+    {
+      "id": "home-001",
+      "islandId": "home",
+      "english": "Where is my phone?",
+      "meaning": "Where is my phone?",
+      "hanzi": "我的手机在哪里？",
+      "pinyin": "wǒ de shǒu jī zài nǎ lǐ",
+      "pinyinNumbered": "wo3 de5 shou3 ji1 zai4 na3 li3",
+      "literal": "My phone located where?",
+      "difficulty": 2,
+      "tags": ["home", "question", "phone", "location"],
+      "patternIds": ["de-possession", "zai-location"],
+      "breakdown": [
+        { "hanzi": "我的", "pinyin": "wǒ de", "meaning": "my" },
+        { "hanzi": "手机", "pinyin": "shǒu jī", "meaning": "phone" },
+        { "hanzi": "在", "pinyin": "zài", "meaning": "located at" },
+        { "hanzi": "哪里", "pinyin": "nǎ lǐ", "meaning": "where" }
+      ],
+      "structureNotes": "In Mandarin, the question word 哪里 stays where the location answer would appear.",
+      "usageNotes": "Very useful daily phrase. 哪儿 can also mean where, especially in northern speech.",
+      "examples": [
+        { "hanzi": "我的钥匙在哪里？", "pinyin": "wǒ de yào shi zài nǎ lǐ", "english": "Where are my keys?" }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "home-002",
+      "islandId": "home",
+      "english": "Wait a minute.",
+      "meaning": "Wait a moment.",
+      "hanzi": "等一下。",
+      "pinyin": "děng yí xià",
+      "pinyinNumbered": "deng3 yi2 xia4",
+      "literal": "Wait briefly.",
+      "difficulty": 1,
+      "tags": ["home", "conversation", "request"],
+      "patternIds": ["verb-yixia"],
+      "breakdown": [
+        { "hanzi": "等", "pinyin": "děng", "meaning": "wait" },
+        { "hanzi": "一下", "pinyin": "yí xià", "meaning": "a moment / briefly" }
+      ],
+      "structureNotes": "Verb + 一下 is a common soft request pattern.",
+      "usageNotes": "Extremely common. 等等 is another casual option.",
+      "examples": [
+        { "hanzi": "看一下。", "pinyin": "kàn yí xià", "english": "Take a look." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "home-003",
+      "islandId": "home",
+      "english": "Help me.",
+      "meaning": "Help me.",
+      "hanzi": "帮我一下。",
+      "pinyin": "bāng wǒ yí xià",
+      "pinyinNumbered": "bang1 wo3 yi2 xia4",
+      "literal": "Help me briefly.",
+      "difficulty": 2,
+      "tags": ["home", "help", "request"],
+      "patternIds": ["verb-yixia"],
+      "breakdown": [
+        { "hanzi": "帮", "pinyin": "bāng", "meaning": "help" },
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "me" },
+        { "hanzi": "一下", "pinyin": "yí xià", "meaning": "a little / briefly" }
+      ],
+      "structureNotes": "帮我 means help me. 一下 makes the request softer.",
+      "usageNotes": "Useful and natural for small help requests.",
+      "examples": [
+        { "hanzi": "你可以帮我吗？", "pinyin": "nǐ kě yǐ bāng wǒ ma", "english": "Can you help me?" }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "home-004",
+      "islandId": "home",
+      "english": "I forgot.",
+      "meaning": "I forgot.",
+      "hanzi": "我忘了。",
+      "pinyin": "wǒ wàng le",
+      "pinyinNumbered": "wo3 wang4 le5",
+      "literal": "I forgot now.",
+      "difficulty": 1,
+      "tags": ["home", "memory", "daily"],
+      "patternIds": ["le-change"],
+      "breakdown": [
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "I" },
+        { "hanzi": "忘", "pinyin": "wàng", "meaning": "forget" },
+        { "hanzi": "了", "pinyin": "le", "meaning": "completed/change marker" }
+      ],
+      "structureNotes": "A short common phrase. Treat as a chunk first.",
+      "usageNotes": "Use when you forgot something. 我忘记了 is also common.",
+      "examples": [
+        { "hanzi": "我忘记了。", "pinyin": "wǒ wàng jì le", "english": "I forgot." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "home-005",
+      "islandId": "home",
+      "english": "I know.",
+      "meaning": "I know.",
+      "hanzi": "我知道。",
+      "pinyin": "wǒ zhī dào",
+      "pinyinNumbered": "wo3 zhi1 dao4",
+      "literal": "I know.",
+      "difficulty": 1,
+      "tags": ["home", "conversation", "know"],
+      "patternIds": ["svo"],
+      "breakdown": [
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "I" },
+        { "hanzi": "知道", "pinyin": "zhī dào", "meaning": "know" }
+      ],
+      "structureNotes": "Simple subject + verb phrase.",
+      "usageNotes": "Common. Use 我不知道 for I don't know.",
+      "examples": [
+        { "hanzi": "我不知道。", "pinyin": "wǒ bù zhī dào", "english": "I don't know." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "home-006",
+      "islandId": "home",
+      "english": "I don't know.",
+      "meaning": "I don't know.",
+      "hanzi": "我不知道。",
+      "pinyin": "wǒ bù zhī dào",
+      "pinyinNumbered": "wo3 bu4 zhi1 dao4",
+      "literal": "I not know.",
+      "difficulty": 1,
+      "tags": ["home", "conversation", "negative", "know"],
+      "patternIds": ["negative-bu"],
+      "breakdown": [
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "I" },
+        { "hanzi": "不", "pinyin": "bù", "meaning": "not" },
+        { "hanzi": "知道", "pinyin": "zhī dào", "meaning": "know" }
+      ],
+      "structureNotes": "不 goes before the verb to make it negative.",
+      "usageNotes": "Very high-frequency phrase.",
+      "examples": [
+        { "hanzi": "我不明白。", "pinyin": "wǒ bù míng bai", "english": "I don't understand." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "home-007",
+      "islandId": "home",
+      "english": "I need to shower.",
+      "meaning": "I need to shower.",
+      "hanzi": "我要洗澡。",
+      "pinyin": "wǒ yào xǐ zǎo",
+      "pinyinNumbered": "wo3 yao4 xi3 zao3",
+      "literal": "I want/need shower.",
+      "difficulty": 2,
+      "tags": ["home", "routine", "shower"],
+      "patternIds": ["wo-yao-action"],
+      "breakdown": [
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "I" },
+        { "hanzi": "要", "pinyin": "yào", "meaning": "want / need / going to" },
+        { "hanzi": "洗澡", "pinyin": "xǐ zǎo", "meaning": "take a shower / bathe" }
+      ],
+      "structureNotes": "我要 + action is a high-value beginner pattern.",
+      "usageNotes": "Natural daily phrase.",
+      "examples": [
+        { "hanzi": "我要睡觉。", "pinyin": "wǒ yào shuì jiào", "english": "I want/am going to sleep." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "home-008",
+      "islandId": "home",
+      "english": "I'll be right back.",
+      "meaning": "I'll be back soon/right away.",
+      "hanzi": "我马上回来。",
+      "pinyin": "wǒ mǎ shàng huí lái",
+      "pinyinNumbered": "wo3 ma3 shang4 hui2 lai2",
+      "literal": "I immediately return come.",
+      "difficulty": 2,
+      "tags": ["home", "leaving", "return"],
+      "patternIds": [],
+      "breakdown": [
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "I" },
+        { "hanzi": "马上", "pinyin": "mǎ shàng", "meaning": "immediately / soon" },
+        { "hanzi": "回来", "pinyin": "huí lái", "meaning": "come back" }
+      ],
+      "structureNotes": "马上 before the verb means soon/immediately.",
+      "usageNotes": "Common when stepping away briefly.",
+      "examples": [
+        { "hanzi": "我马上到。", "pinyin": "wǒ mǎ shàng dào", "english": "I'll arrive soon." }
+      ],
+      "audioUrl": ""
+    },
+
+    {
+      "id": "work-001",
+      "islandId": "work",
+      "english": "I have work today.",
+      "meaning": "I have work today.",
+      "hanzi": "我今天要上班。",
+      "pinyin": "wǒ jīn tiān yào shàng bān",
+      "pinyinNumbered": "wo3 jin1 tian1 yao4 shang4 ban1",
+      "literal": "I today need/go-to go-to-work.",
+      "difficulty": 2,
+      "tags": ["work", "today", "routine"],
+      "patternIds": ["wo-yao-action"],
+      "breakdown": [
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "I" },
+        { "hanzi": "今天", "pinyin": "jīn tiān", "meaning": "today" },
+        { "hanzi": "要", "pinyin": "yào", "meaning": "need / going to" },
+        { "hanzi": "上班", "pinyin": "shàng bān", "meaning": "go to work / be at work" }
+      ],
+      "structureNotes": "Time words often come early: subject + time + action.",
+      "usageNotes": "上班 means to work/go to work for a job shift, not generic study/work on a task.",
+      "examples": [
+        { "hanzi": "我今天不上班。", "pinyin": "wǒ jīn tiān bù shàng bān", "english": "I do not have work today." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "work-002",
+      "islandId": "work",
+      "english": "I am working from home.",
+      "meaning": "I am working from home.",
+      "hanzi": "我在家工作。",
+      "pinyin": "wǒ zài jiā gōng zuò",
+      "pinyinNumbered": "wo3 zai4 jia1 gong1 zuo4",
+      "literal": "I at home work.",
+      "difficulty": 2,
+      "tags": ["work", "home", "location"],
+      "patternIds": ["zai-location"],
+      "breakdown": [
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "I" },
+        { "hanzi": "在家", "pinyin": "zài jiā", "meaning": "at home" },
+        { "hanzi": "工作", "pinyin": "gōng zuò", "meaning": "work" }
+      ],
+      "structureNotes": "Location phrase 在家 comes before the main action 工作.",
+      "usageNotes": "Natural for remote work.",
+      "examples": [
+        { "hanzi": "我在公司工作。", "pinyin": "wǒ zài gōng sī gōng zuò", "english": "I work at the company/office." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "work-003",
+      "islandId": "work",
+      "english": "I have a meeting.",
+      "meaning": "I have a meeting.",
+      "hanzi": "我有会议。",
+      "pinyin": "wǒ yǒu huì yì",
+      "pinyinNumbered": "wo3 you3 hui4 yi4",
+      "literal": "I have meeting.",
+      "difficulty": 2,
+      "tags": ["work", "meeting"],
+      "patternIds": ["svo"],
+      "breakdown": [
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "I" },
+        { "hanzi": "有", "pinyin": "yǒu", "meaning": "have" },
+        { "hanzi": "会议", "pinyin": "huì yì", "meaning": "meeting" }
+      ],
+      "structureNotes": "有 means have/there is.",
+      "usageNotes": "我的会议很无聊 = my meeting is boring.",
+      "examples": [
+        { "hanzi": "我现在有会议。", "pinyin": "wǒ xiàn zài yǒu huì yì", "english": "I have a meeting now." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "work-004",
+      "islandId": "work",
+      "english": "My meeting was boring.",
+      "meaning": "My meeting was boring.",
+      "hanzi": "我的会议很无聊。",
+      "pinyin": "wǒ de huì yì hěn wú liáo",
+      "pinyinNumbered": "wo3 de5 hui4 yi4 hen3 wu2 liao2",
+      "literal": "My meeting very boring.",
+      "difficulty": 3,
+      "tags": ["work", "meeting", "boring", "complaint"],
+      "patternIds": ["de-possession", "hen-adjective"],
+      "breakdown": [
+        { "hanzi": "我的", "pinyin": "wǒ de", "meaning": "my" },
+        { "hanzi": "会议", "pinyin": "huì yì", "meaning": "meeting" },
+        { "hanzi": "很", "pinyin": "hěn", "meaning": "very / adjective linker" },
+        { "hanzi": "无聊", "pinyin": "wú liáo", "meaning": "boring" }
+      ],
+      "structureNotes": "Subject + 很 + adjective. No explicit past tense is required if context is clear.",
+      "usageNotes": "Natural work complaint.",
+      "examples": [
+        { "hanzi": "这个会议很无聊。", "pinyin": "zhè ge huì yì hěn wú liáo", "english": "This meeting is boring." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "work-005",
+      "islandId": "work",
+      "english": "I am writing code.",
+      "meaning": "I am writing code.",
+      "hanzi": "我在写代码。",
+      "pinyin": "wǒ zài xiě dài mǎ",
+      "pinyinNumbered": "wo3 zai4 xie3 dai4 ma3",
+      "literal": "I currently write code.",
+      "difficulty": 2,
+      "tags": ["work", "programming", "code"],
+      "patternIds": [],
+      "breakdown": [
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "I" },
+        { "hanzi": "在", "pinyin": "zài", "meaning": "currently doing" },
+        { "hanzi": "写", "pinyin": "xiě", "meaning": "write" },
+        { "hanzi": "代码", "pinyin": "dài mǎ", "meaning": "code" }
+      ],
+      "structureNotes": "在 before an action can mark that the action is happening now.",
+      "usageNotes": "Useful and relevant for programming work.",
+      "examples": [
+        { "hanzi": "我在工作。", "pinyin": "wǒ zài gōng zuò", "english": "I am working." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "work-006",
+      "islandId": "work",
+      "english": "My code doesn't work.",
+      "meaning": "My code does not run/work.",
+      "hanzi": "我的代码不能运行。",
+      "pinyin": "wǒ de dài mǎ bù néng yùn xíng",
+      "pinyinNumbered": "wo3 de5 dai4 ma3 bu4 neng2 yun4 xing2",
+      "literal": "My code cannot run.",
+      "difficulty": 3,
+      "tags": ["work", "programming", "code", "negative"],
+      "patternIds": ["de-possession", "negative-bu"],
+      "breakdown": [
+        { "hanzi": "我的", "pinyin": "wǒ de", "meaning": "my" },
+        { "hanzi": "代码", "pinyin": "dài mǎ", "meaning": "code" },
+        { "hanzi": "不能", "pinyin": "bù néng", "meaning": "cannot" },
+        { "hanzi": "运行", "pinyin": "yùn xíng", "meaning": "run / operate" }
+      ],
+      "structureNotes": "不能 means cannot. Put it before the verb/action.",
+      "usageNotes": "Natural enough for programming. More casual: 我的代码不行 = my code is no good/doesn't work.",
+      "examples": [
+        { "hanzi": "这个不行。", "pinyin": "zhè ge bù xíng", "english": "This doesn't work / this is not okay." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "work-007",
+      "islandId": "work",
+      "english": "I found the problem.",
+      "meaning": "I found the problem.",
+      "hanzi": "我找到问题了。",
+      "pinyin": "wǒ zhǎo dào wèn tí le",
+      "pinyinNumbered": "wo3 zhao3 dao4 wen4 ti2 le5",
+      "literal": "I found problem now.",
+      "difficulty": 3,
+      "tags": ["work", "programming", "problem", "success"],
+      "patternIds": ["le-change"],
+      "breakdown": [
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "I" },
+        { "hanzi": "找到", "pinyin": "zhǎo dào", "meaning": "find / successfully find" },
+        { "hanzi": "问题", "pinyin": "wèn tí", "meaning": "problem" },
+        { "hanzi": "了", "pinyin": "le", "meaning": "completed/change marker" }
+      ],
+      "structureNotes": "找到 emphasizes successfully finding something. 了 marks completion/change.",
+      "usageNotes": "Useful for debugging.",
+      "examples": [
+        { "hanzi": "我找到了。", "pinyin": "wǒ zhǎo dào le", "english": "I found it." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "work-008",
+      "islandId": "work",
+      "english": "I fixed it.",
+      "meaning": "I fixed it.",
+      "hanzi": "我修好了。",
+      "pinyin": "wǒ xiū hǎo le",
+      "pinyinNumbered": "wo3 xiu1 hao3 le5",
+      "literal": "I fixed-good completed.",
+      "difficulty": 2,
+      "tags": ["work", "fix", "success"],
+      "patternIds": ["le-change"],
+      "breakdown": [
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "I" },
+        { "hanzi": "修", "pinyin": "xiū", "meaning": "repair / fix" },
+        { "hanzi": "好", "pinyin": "hǎo", "meaning": "good / done successfully" },
+        { "hanzi": "了", "pinyin": "le", "meaning": "completed" }
+      ],
+      "structureNotes": "Verb + 好 can mean the action was completed successfully.",
+      "usageNotes": "Useful for code, devices, house stuff, etc.",
+      "examples": [
+        { "hanzi": "好了。", "pinyin": "hǎo le", "english": "It's done / ready / okay now." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "work-009",
+      "islandId": "work",
+      "english": "This makes no sense.",
+      "meaning": "This makes no sense.",
+      "hanzi": "这个没有道理。",
+      "pinyin": "zhè ge méi yǒu dào lǐ",
+      "pinyinNumbered": "zhe4 ge5 mei2 you3 dao4 li3",
+      "literal": "This does-not-have reason/logic.",
+      "difficulty": 3,
+      "tags": ["work", "complaint", "logic", "negative"],
+      "patternIds": ["mei-you"],
+      "breakdown": [
+        { "hanzi": "这个", "pinyin": "zhè ge", "meaning": "this" },
+        { "hanzi": "没有", "pinyin": "méi yǒu", "meaning": "does not have" },
+        { "hanzi": "道理", "pinyin": "dào lǐ", "meaning": "reason / logic / sense" }
+      ],
+      "structureNotes": "没有 + noun means does not have that thing. Here: no logic/reason.",
+      "usageNotes": "Understandable and useful. 这不合理 means this is unreasonable/illogical.",
+      "examples": [
+        { "hanzi": "这不合理。", "pinyin": "zhè bù hé lǐ", "english": "This is unreasonable / illogical." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "work-010",
+      "islandId": "work",
+      "english": "Let me test it.",
+      "meaning": "Let me test it.",
+      "hanzi": "让我测试一下。",
+      "pinyin": "ràng wǒ cè shì yí xià",
+      "pinyinNumbered": "rang4 wo3 ce4 shi4 yi2 xia4",
+      "literal": "Let me test briefly.",
+      "difficulty": 3,
+      "tags": ["work", "programming", "test"],
+      "patternIds": ["rang-wo-action", "verb-yixia"],
+      "breakdown": [
+        { "hanzi": "让", "pinyin": "ràng", "meaning": "let / allow" },
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "me" },
+        { "hanzi": "测试", "pinyin": "cè shì", "meaning": "test" },
+        { "hanzi": "一下", "pinyin": "yí xià", "meaning": "briefly / a bit" }
+      ],
+      "structureNotes": "让我 + action means let me do the action. 一下 softens the action.",
+      "usageNotes": "Very useful dev phrase.",
+      "examples": [
+        { "hanzi": "让我看一下。", "pinyin": "ràng wǒ kàn yí xià", "english": "Let me take a look." }
+      ],
+      "audioUrl": ""
+    },
+
+    {
+      "id": "opinions-001",
+      "islandId": "opinions",
+      "english": "I think...",
+      "meaning": "I think / I feel that...",
+      "hanzi": "我觉得……",
+      "pinyin": "wǒ jué de",
+      "pinyinNumbered": "wo3 jue2 de5",
+      "literal": "I feel/think...",
+      "difficulty": 1,
+      "tags": ["opinions", "thinking", "sentence-starter"],
+      "patternIds": [],
+      "breakdown": [
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "I" },
+        { "hanzi": "觉得", "pinyin": "jué de", "meaning": "think / feel" }
+      ],
+      "structureNotes": "Use 我觉得 before your opinion. It is more natural than directly translating 'I think' with 想 in many opinion sentences.",
+      "usageNotes": "High-value phrase for sounding like yourself.",
+      "examples": [
+        { "hanzi": "我觉得这个很好。", "pinyin": "wǒ jué de zhè ge hěn hǎo", "english": "I think this is good." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "opinions-002",
+      "islandId": "opinions",
+      "english": "I don't think so.",
+      "meaning": "I don't think so.",
+      "hanzi": "我不这么觉得。",
+      "pinyin": "wǒ bù zhè me jué de",
+      "pinyinNumbered": "wo3 bu4 zhe4 me5 jue2 de5",
+      "literal": "I not this-way think.",
+      "difficulty": 3,
+      "tags": ["opinions", "disagree", "negative"],
+      "patternIds": ["negative-bu"],
+      "breakdown": [
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "I" },
+        { "hanzi": "不", "pinyin": "bù", "meaning": "not" },
+        { "hanzi": "这么", "pinyin": "zhè me", "meaning": "this way / like this" },
+        { "hanzi": "觉得", "pinyin": "jué de", "meaning": "think / feel" }
+      ],
+      "structureNotes": "This phrase literally says 'I don't think this way.'",
+      "usageNotes": "Natural disagreement phrase, softer than saying someone is wrong.",
+      "examples": [
+        { "hanzi": "我不同意。", "pinyin": "wǒ bù tóng yì", "english": "I disagree." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "opinions-003",
+      "islandId": "opinions",
+      "english": "Why?",
+      "meaning": "Why?",
+      "hanzi": "为什么？",
+      "pinyin": "wèi shén me",
+      "pinyinNumbered": "wei4 shen2 me5",
+      "literal": "for what?",
+      "difficulty": 1,
+      "tags": ["opinions", "question", "why"],
+      "patternIds": [],
+      "breakdown": [
+        { "hanzi": "为什么", "pinyin": "wèi shén me", "meaning": "why" }
+      ],
+      "structureNotes": "Fixed question word.",
+      "usageNotes": "Extremely useful. Tone can sound curious or challenging.",
+      "examples": [
+        { "hanzi": "你为什么生气？", "pinyin": "nǐ wèi shén me shēng qì", "english": "Why are you angry?" }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "opinions-004",
+      "islandId": "opinions",
+      "english": "Because...",
+      "meaning": "Because...",
+      "hanzi": "因为……",
+      "pinyin": "yīn wèi",
+      "pinyinNumbered": "yin1 wei4",
+      "literal": "because...",
+      "difficulty": 1,
+      "tags": ["opinions", "because", "sentence-starter"],
+      "patternIds": [],
+      "breakdown": [
+        { "hanzi": "因为", "pinyin": "yīn wèi", "meaning": "because" }
+      ],
+      "structureNotes": "Use 因为 before the reason.",
+      "usageNotes": "Useful with 为什么.",
+      "examples": [
+        { "hanzi": "因为我累了。", "pinyin": "yīn wèi wǒ lèi le", "english": "Because I am tired." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "opinions-005",
+      "islandId": "opinions",
+      "english": "Maybe.",
+      "meaning": "Maybe.",
+      "hanzi": "可能吧。",
+      "pinyin": "kě néng ba",
+      "pinyinNumbered": "ke3 neng2 ba5",
+      "literal": "Maybe [softened].",
+      "difficulty": 1,
+      "tags": ["opinions", "maybe"],
+      "patternIds": [],
+      "breakdown": [
+        { "hanzi": "可能", "pinyin": "kě néng", "meaning": "maybe / possible" },
+        { "hanzi": "吧", "pinyin": "ba", "meaning": "softening particle" }
+      ],
+      "structureNotes": "吧 makes the answer sound less blunt/certain.",
+      "usageNotes": "This is the word you wanted for maybe. 困 means sleepy.",
+      "examples": [
+        { "hanzi": "可能。", "pinyin": "kě néng", "english": "Maybe / possible." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "opinions-006",
+      "islandId": "opinions",
+      "english": "You're right.",
+      "meaning": "You're right.",
+      "hanzi": "你是对的。",
+      "pinyin": "nǐ shì duì de",
+      "pinyinNumbered": "ni3 shi4 dui4 de5",
+      "literal": "You are correct one.",
+      "difficulty": 2,
+      "tags": ["opinions", "agree", "right"],
+      "patternIds": [],
+      "breakdown": [
+        { "hanzi": "你", "pinyin": "nǐ", "meaning": "you" },
+        { "hanzi": "是", "pinyin": "shì", "meaning": "are / be" },
+        { "hanzi": "对", "pinyin": "duì", "meaning": "correct / right" },
+        { "hanzi": "的", "pinyin": "de", "meaning": "nominal/emphasis particle" }
+      ],
+      "structureNotes": "A common way to say someone is right. 对 alone can also mean correct/right.",
+      "usageNotes": "You can also say 对, 你说得对 = Right, what you said is correct.",
+      "examples": [
+        { "hanzi": "对。", "pinyin": "duì", "english": "Right / correct." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "opinions-007",
+      "islandId": "opinions",
+      "english": "I was wrong.",
+      "meaning": "I was wrong.",
+      "hanzi": "我错了。",
+      "pinyin": "wǒ cuò le",
+      "pinyinNumbered": "wo3 cuo4 le5",
+      "literal": "I wrong now/completed.",
+      "difficulty": 1,
+      "tags": ["opinions", "wrong", "apology"],
+      "patternIds": ["le-change"],
+      "breakdown": [
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "I" },
+        { "hanzi": "错", "pinyin": "cuò", "meaning": "wrong" },
+        { "hanzi": "了", "pinyin": "le", "meaning": "state/completion marker" }
+      ],
+      "structureNotes": "Short fixed phrase for admitting fault or being incorrect.",
+      "usageNotes": "Useful in relationships and conversations.",
+      "examples": [
+        { "hanzi": "对不起，我错了。", "pinyin": "duì bù qǐ, wǒ cuò le", "english": "Sorry, I was wrong." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "opinions-008",
+      "islandId": "opinions",
+      "english": "That's stupid.",
+      "meaning": "That is stupid / silly.",
+      "hanzi": "这个很傻。",
+      "pinyin": "zhè ge hěn shǎ",
+      "pinyinNumbered": "zhe4 ge5 hen3 sha3",
+      "literal": "This very stupid/silly.",
+      "difficulty": 2,
+      "tags": ["opinions", "reaction", "adjective"],
+      "patternIds": ["hen-adjective"],
+      "breakdown": [
+        { "hanzi": "这个", "pinyin": "zhè ge", "meaning": "this" },
+        { "hanzi": "很", "pinyin": "hěn", "meaning": "very / adjective linker" },
+        { "hanzi": "傻", "pinyin": "shǎ", "meaning": "stupid / silly" }
+      ],
+      "structureNotes": "Subject + 很 + adjective.",
+      "usageNotes": "Can be insulting depending on context. Use carefully.",
+      "examples": [
+        { "hanzi": "这个很奇怪。", "pinyin": "zhè ge hěn qí guài", "english": "This is weird." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "opinions-009",
+      "islandId": "opinions",
+      "english": "That's interesting.",
+      "meaning": "That is interesting.",
+      "hanzi": "这个很有意思。",
+      "pinyin": "zhè ge hěn yǒu yì si",
+      "pinyinNumbered": "zhe4 ge5 hen3 you3 yi4 si5",
+      "literal": "This very has meaning/interest.",
+      "difficulty": 2,
+      "tags": ["opinions", "reaction", "interesting"],
+      "patternIds": ["hen-adjective"],
+      "breakdown": [
+        { "hanzi": "这个", "pinyin": "zhè ge", "meaning": "this" },
+        { "hanzi": "很", "pinyin": "hěn", "meaning": "very / linker" },
+        { "hanzi": "有意思", "pinyin": "yǒu yì si", "meaning": "interesting" }
+      ],
+      "structureNotes": "有意思 literally has meaning/interest, but functions as interesting.",
+      "usageNotes": "Useful positive reaction phrase.",
+      "examples": [
+        { "hanzi": "很有意思。", "pinyin": "hěn yǒu yì si", "english": "Very interesting." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "opinions-010",
+      "islandId": "opinions",
+      "english": "I have an idea.",
+      "meaning": "I have an idea.",
+      "hanzi": "我有一个想法。",
+      "pinyin": "wǒ yǒu yí ge xiǎng fǎ",
+      "pinyinNumbered": "wo3 you3 yi2 ge5 xiang3 fa3",
+      "literal": "I have one idea.",
+      "difficulty": 2,
+      "tags": ["opinions", "idea", "conversation"],
+      "patternIds": ["svo"],
+      "breakdown": [
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "I" },
+        { "hanzi": "有", "pinyin": "yǒu", "meaning": "have" },
+        { "hanzi": "一个", "pinyin": "yí ge", "meaning": "one / a" },
+        { "hanzi": "想法", "pinyin": "xiǎng fǎ", "meaning": "idea" }
+      ],
+      "structureNotes": "有 means have. 一个 is a general 'a/an/one' with the common measure word 个.",
+      "usageNotes": "Useful for projects and conversations.",
+      "examples": [
+        { "hanzi": "这是一个好想法。", "pinyin": "zhè shì yí ge hǎo xiǎng fǎ", "english": "This is a good idea." }
+      ],
+      "audioUrl": ""
+    },
+
+    {
+      "id": "conversation-001",
+      "islandId": "conversation",
+      "english": "I don't understand.",
+      "meaning": "I don't understand.",
+      "hanzi": "我不明白。",
+      "pinyin": "wǒ bù míng bai",
+      "pinyinNumbered": "wo3 bu4 ming2 bai5",
+      "literal": "I not understand.",
+      "difficulty": 1,
+      "tags": ["conversation", "understand", "negative"],
+      "patternIds": ["negative-bu"],
+      "breakdown": [
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "I" },
+        { "hanzi": "不", "pinyin": "bù", "meaning": "not" },
+        { "hanzi": "明白", "pinyin": "míng bai", "meaning": "understand" }
+      ],
+      "structureNotes": "不 goes before the verb/adjective to negate it.",
+      "usageNotes": "Very important beginner phrase.",
+      "examples": [
+        { "hanzi": "我听不懂。", "pinyin": "wǒ tīng bù dǒng", "english": "I don't understand what I hear." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "conversation-002",
+      "islandId": "conversation",
+      "english": "Say it again.",
+      "meaning": "Say it again.",
+      "hanzi": "再说一遍。",
+      "pinyin": "zài shuō yí biàn",
+      "pinyinNumbered": "zai4 shuo1 yi2 bian4",
+      "literal": "Again say one time.",
+      "difficulty": 2,
+      "tags": ["conversation", "repeat", "request"],
+      "patternIds": [],
+      "breakdown": [
+        { "hanzi": "再", "pinyin": "zài", "meaning": "again" },
+        { "hanzi": "说", "pinyin": "shuō", "meaning": "say / speak" },
+        { "hanzi": "一遍", "pinyin": "yí biàn", "meaning": "one time through / once again" }
+      ],
+      "structureNotes": "再 before the verb means do it again.",
+      "usageNotes": "Critical phrase for learning from native speakers.",
+      "examples": [
+        { "hanzi": "请再说一遍。", "pinyin": "qǐng zài shuō yí biàn", "english": "Please say it again." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "conversation-003",
+      "islandId": "conversation",
+      "english": "Speak slower.",
+      "meaning": "Speak slower.",
+      "hanzi": "慢一点说。",
+      "pinyin": "màn yì diǎn shuō",
+      "pinyinNumbered": "man4 yi4 dian3 shuo1",
+      "literal": "Slow a little speak.",
+      "difficulty": 2,
+      "tags": ["conversation", "slow", "request"],
+      "patternIds": [],
+      "breakdown": [
+        { "hanzi": "慢", "pinyin": "màn", "meaning": "slow" },
+        { "hanzi": "一点", "pinyin": "yì diǎn", "meaning": "a little" },
+        { "hanzi": "说", "pinyin": "shuō", "meaning": "speak" }
+      ],
+      "structureNotes": "Adjective + 一点 means a little more adjective. 慢一点 = a little slower.",
+      "usageNotes": "Useful with partner/family/native speakers.",
+      "examples": [
+        { "hanzi": "请慢一点说。", "pinyin": "qǐng màn yì diǎn shuō", "english": "Please speak slower." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "conversation-004",
+      "islandId": "conversation",
+      "english": "How do you say this in Chinese?",
+      "meaning": "How do you say this in Chinese?",
+      "hanzi": "这个中文怎么说？",
+      "pinyin": "zhè ge zhōng wén zěn me shuō",
+      "pinyinNumbered": "zhe4 ge5 zhong1 wen2 zen3 me5 shuo1",
+      "literal": "This Chinese how say?",
+      "difficulty": 3,
+      "tags": ["conversation", "learning", "question"],
+      "patternIds": [],
+      "breakdown": [
+        { "hanzi": "这个", "pinyin": "zhè ge", "meaning": "this" },
+        { "hanzi": "中文", "pinyin": "zhōng wén", "meaning": "Chinese language" },
+        { "hanzi": "怎么", "pinyin": "zěn me", "meaning": "how" },
+        { "hanzi": "说", "pinyin": "shuō", "meaning": "say" }
+      ],
+      "structureNotes": "怎么 + verb means how to do the verb. 中文怎么说 = how is it said in Chinese?",
+      "usageNotes": "One of the most important meta-learning phrases.",
+      "examples": [
+        { "hanzi": "这个英文怎么说？", "pinyin": "zhè ge yīng wén zěn me shuō", "english": "How do you say this in English?" }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "conversation-005",
+      "islandId": "conversation",
+      "english": "Can you teach me?",
+      "meaning": "Can you teach me?",
+      "hanzi": "你可以教我吗？",
+      "pinyin": "nǐ kě yǐ jiāo wǒ ma",
+      "pinyinNumbered": "ni3 ke3 yi3 jiao1 wo3 ma5",
+      "literal": "You can teach me question?",
+      "difficulty": 2,
+      "tags": ["conversation", "learning", "request"],
+      "patternIds": ["keyi-request", "ma-question"],
+      "breakdown": [
+        { "hanzi": "你", "pinyin": "nǐ", "meaning": "you" },
+        { "hanzi": "可以", "pinyin": "kě yǐ", "meaning": "can / may" },
+        { "hanzi": "教", "pinyin": "jiāo", "meaning": "teach" },
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "me" },
+        { "hanzi": "吗", "pinyin": "ma", "meaning": "question marker" }
+      ],
+      "structureNotes": "你可以 + action + 吗 asks whether someone can do something.",
+      "usageNotes": "Good phrase for asking your girlfriend for help.",
+      "examples": [
+        { "hanzi": "你可以帮我吗？", "pinyin": "nǐ kě yǐ bāng wǒ ma", "english": "Can you help me?" }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "conversation-006",
+      "islandId": "conversation",
+      "english": "What does this mean?",
+      "meaning": "What does this mean?",
+      "hanzi": "这是什么意思？",
+      "pinyin": "zhè shì shén me yì si",
+      "pinyinNumbered": "zhe4 shi4 shen2 me5 yi4 si5",
+      "literal": "This is what meaning?",
+      "difficulty": 2,
+      "tags": ["conversation", "learning", "question", "meaning"],
+      "patternIds": [],
+      "breakdown": [
+        { "hanzi": "这", "pinyin": "zhè", "meaning": "this" },
+        { "hanzi": "是", "pinyin": "shì", "meaning": "is" },
+        { "hanzi": "什么", "pinyin": "shén me", "meaning": "what" },
+        { "hanzi": "意思", "pinyin": "yì si", "meaning": "meaning" }
+      ],
+      "structureNotes": "什么 stays where the unknown answer would be. Literally: this is what meaning?",
+      "usageNotes": "Critical for learning new words/phrases.",
+      "examples": [
+        { "hanzi": "这个词是什么意思？", "pinyin": "zhè ge cí shì shén me yì si", "english": "What does this word mean?" }
+      ],
+      "audioUrl": ""
+    },
+
+    {
+      "id": "shopping-001",
+      "islandId": "shopping",
+      "english": "I am going grocery shopping.",
+      "meaning": "I am going to buy groceries.",
+      "hanzi": "我要去买菜。",
+      "pinyin": "wǒ yào qù mǎi cài",
+      "pinyinNumbered": "wo3 yao4 qu4 mai3 cai4",
+      "literal": "I want/go-to go buy groceries.",
+      "difficulty": 2,
+      "tags": ["shopping", "food", "groceries"],
+      "patternIds": ["wo-yao-action"],
+      "breakdown": [
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "I" },
+        { "hanzi": "要", "pinyin": "yào", "meaning": "going to / want to" },
+        { "hanzi": "去", "pinyin": "qù", "meaning": "go" },
+        { "hanzi": "买菜", "pinyin": "mǎi cài", "meaning": "buy groceries / buy food" }
+      ],
+      "structureNotes": "要去 + verb means going to go do an action.",
+      "usageNotes": "Very useful household phrase.",
+      "examples": [
+        { "hanzi": "我要去商店。", "pinyin": "wǒ yào qù shāng diàn", "english": "I am going to the store." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "shopping-002",
+      "islandId": "shopping",
+      "english": "This is too expensive.",
+      "meaning": "This is too expensive.",
+      "hanzi": "这个太贵了。",
+      "pinyin": "zhè ge tài guì le",
+      "pinyinNumbered": "zhe4 ge5 tai4 gui4 le5",
+      "literal": "This too expensive.",
+      "difficulty": 2,
+      "tags": ["shopping", "money", "reaction"],
+      "patternIds": ["tai-adjective-le"],
+      "breakdown": [
+        { "hanzi": "这个", "pinyin": "zhè ge", "meaning": "this" },
+        { "hanzi": "太", "pinyin": "tài", "meaning": "too" },
+        { "hanzi": "贵", "pinyin": "guì", "meaning": "expensive" },
+        { "hanzi": "了", "pinyin": "le", "meaning": "reaction/completion particle" }
+      ],
+      "structureNotes": "太 + adjective + 了 is a common reaction pattern.",
+      "usageNotes": "Useful anywhere money/cost comes up.",
+      "examples": [
+        { "hanzi": "太便宜了。", "pinyin": "tài pián yi le", "english": "So cheap / too cheap." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "shopping-003",
+      "islandId": "shopping",
+      "english": "I don't need it.",
+      "meaning": "I don't need it.",
+      "hanzi": "我不需要。",
+      "pinyin": "wǒ bù xū yào",
+      "pinyinNumbered": "wo3 bu4 xu1 yao4",
+      "literal": "I not need.",
+      "difficulty": 1,
+      "tags": ["shopping", "need", "negative"],
+      "patternIds": ["negative-bu"],
+      "breakdown": [
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "I" },
+        { "hanzi": "不", "pinyin": "bù", "meaning": "not" },
+        { "hanzi": "需要", "pinyin": "xū yào", "meaning": "need" }
+      ],
+      "structureNotes": "不 goes before 需要 to negate it.",
+      "usageNotes": "Useful for shopping or refusing offers.",
+      "examples": [
+        { "hanzi": "我需要这个。", "pinyin": "wǒ xū yào zhè ge", "english": "I need this." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "shopping-004",
+      "islandId": "shopping",
+      "english": "I want to buy this.",
+      "meaning": "I want to buy this.",
+      "hanzi": "我想买这个。",
+      "pinyin": "wǒ xiǎng mǎi zhè ge",
+      "pinyinNumbered": "wo3 xiang3 mai3 zhe4 ge5",
+      "literal": "I want buy this.",
+      "difficulty": 2,
+      "tags": ["shopping", "buy", "want"],
+      "patternIds": ["wo-xiang-action"],
+      "breakdown": [
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "I" },
+        { "hanzi": "想", "pinyin": "xiǎng", "meaning": "want to" },
+        { "hanzi": "买", "pinyin": "mǎi", "meaning": "buy" },
+        { "hanzi": "这个", "pinyin": "zhè ge", "meaning": "this" }
+      ],
+      "structureNotes": "我想 + verb gives a softer desire/want.",
+      "usageNotes": "Useful in stores and online shopping talk.",
+      "examples": [
+        { "hanzi": "我想买咖啡。", "pinyin": "wǒ xiǎng mǎi kā fēi", "english": "I want to buy coffee." }
+      ],
+      "audioUrl": ""
+    },
+
+    {
+      "id": "time-001",
+      "islandId": "time",
+      "english": "Today.",
+      "meaning": "Today.",
+      "hanzi": "今天。",
+      "pinyin": "jīn tiān",
+      "pinyinNumbered": "jin1 tian1",
+      "literal": "today",
+      "difficulty": 1,
+      "tags": ["time", "today"],
+      "patternIds": [],
+      "breakdown": [
+        { "hanzi": "今天", "pinyin": "jīn tiān", "meaning": "today" }
+      ],
+      "structureNotes": "Time words often appear before or after the subject, before the main action.",
+      "usageNotes": "Core time word.",
+      "examples": [
+        { "hanzi": "我今天很忙。", "pinyin": "wǒ jīn tiān hěn máng", "english": "I am busy today." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "time-002",
+      "islandId": "time",
+      "english": "Tomorrow.",
+      "meaning": "Tomorrow.",
+      "hanzi": "明天。",
+      "pinyin": "míng tiān",
+      "pinyinNumbered": "ming2 tian1",
+      "literal": "tomorrow",
+      "difficulty": 1,
+      "tags": ["time", "tomorrow"],
+      "patternIds": [],
+      "breakdown": [
+        { "hanzi": "明天", "pinyin": "míng tiān", "meaning": "tomorrow" }
+      ],
+      "structureNotes": "Core time word.",
+      "usageNotes": "Use in future planning.",
+      "examples": [
+        { "hanzi": "明天见。", "pinyin": "míng tiān jiàn", "english": "See you tomorrow." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "time-003",
+      "islandId": "time",
+      "english": "I will do it later.",
+      "meaning": "I will do it later.",
+      "hanzi": "我等一下做。",
+      "pinyin": "wǒ děng yí xià zuò",
+      "pinyinNumbered": "wo3 deng3 yi2 xia4 zuo4",
+      "literal": "I wait a bit do.",
+      "difficulty": 2,
+      "tags": ["time", "later", "action"],
+      "patternIds": ["verb-yixia"],
+      "breakdown": [
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "I" },
+        { "hanzi": "等一下", "pinyin": "děng yí xià", "meaning": "later / wait a moment" },
+        { "hanzi": "做", "pinyin": "zuò", "meaning": "do / make" }
+      ],
+      "structureNotes": "等一下 can mean wait a moment or in a little bit depending on context.",
+      "usageNotes": "Useful for procrastination and daily tasks.",
+      "examples": [
+        { "hanzi": "我马上做。", "pinyin": "wǒ mǎ shàng zuò", "english": "I'll do it right away." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "time-004",
+      "islandId": "time",
+      "english": "See you tomorrow.",
+      "meaning": "See you tomorrow.",
+      "hanzi": "明天见。",
+      "pinyin": "míng tiān jiàn",
+      "pinyinNumbered": "ming2 tian1 jian4",
+      "literal": "Tomorrow see.",
+      "difficulty": 1,
+      "tags": ["time", "goodbye", "tomorrow"],
+      "patternIds": [],
+      "breakdown": [
+        { "hanzi": "明天", "pinyin": "míng tiān", "meaning": "tomorrow" },
+        { "hanzi": "见", "pinyin": "jiàn", "meaning": "see / meet" }
+      ],
+      "structureNotes": "Fixed goodbye phrase.",
+      "usageNotes": "Common when you will see someone tomorrow.",
+      "examples": [
+        { "hanzi": "晚安，明天见。", "pinyin": "wǎn ān, míng tiān jiàn", "english": "Good night, see you tomorrow." }
+      ],
+      "audioUrl": ""
+    },
+
+    {
+      "id": "survival-001",
+      "islandId": "survival",
+      "english": "Hello.",
+      "meaning": "Hello.",
+      "hanzi": "你好。",
+      "pinyin": "nǐ hǎo",
+      "pinyinNumbered": "ni3 hao3",
+      "literal": "You good.",
+      "difficulty": 1,
+      "tags": ["survival", "greeting"],
+      "patternIds": [],
+      "breakdown": [
+        { "hanzi": "你", "pinyin": "nǐ", "meaning": "you" },
+        { "hanzi": "好", "pinyin": "hǎo", "meaning": "good" }
+      ],
+      "structureNotes": "Basic greeting. Two third tones together often make the first sound like second tone in speech.",
+      "usageNotes": "Useful but less common with close people than casual greetings like 早 or direct conversation.",
+      "examples": [
+        { "hanzi": "你好啊。", "pinyin": "nǐ hǎo a", "english": "Hey / hello there." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "survival-002",
+      "islandId": "survival",
+      "english": "Thank you.",
+      "meaning": "Thank you.",
+      "hanzi": "谢谢。",
+      "pinyin": "xiè xie",
+      "pinyinNumbered": "xie4 xie5",
+      "literal": "thanks",
+      "difficulty": 1,
+      "tags": ["survival", "polite"],
+      "patternIds": [],
+      "breakdown": [
+        { "hanzi": "谢谢", "pinyin": "xiè xie", "meaning": "thank you" }
+      ],
+      "structureNotes": "Fixed polite phrase.",
+      "usageNotes": "Common and useful.",
+      "examples": [
+        { "hanzi": "谢谢你。", "pinyin": "xiè xie nǐ", "english": "Thank you." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "survival-003",
+      "islandId": "survival",
+      "english": "Sorry.",
+      "meaning": "Sorry.",
+      "hanzi": "对不起。",
+      "pinyin": "duì bù qǐ",
+      "pinyinNumbered": "dui4 bu4 qi3",
+      "literal": "sorry / cannot face you",
+      "difficulty": 1,
+      "tags": ["survival", "apology"],
+      "patternIds": [],
+      "breakdown": [
+        { "hanzi": "对不起", "pinyin": "duì bù qǐ", "meaning": "sorry" }
+      ],
+      "structureNotes": "Fixed apology phrase.",
+      "usageNotes": "Useful but can sound heavier than 不好意思 depending on situation.",
+      "examples": [
+        { "hanzi": "不好意思。", "pinyin": "bù hǎo yì si", "english": "Excuse me / sorry." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "survival-004",
+      "islandId": "survival",
+      "english": "No problem.",
+      "meaning": "No problem.",
+      "hanzi": "没问题。",
+      "pinyin": "méi wèn tí",
+      "pinyinNumbered": "mei2 wen4 ti2",
+      "literal": "No problem.",
+      "difficulty": 1,
+      "tags": ["survival", "reply"],
+      "patternIds": ["mei-you"],
+      "breakdown": [
+        { "hanzi": "没", "pinyin": "méi", "meaning": "not have / no" },
+        { "hanzi": "问题", "pinyin": "wèn tí", "meaning": "problem" }
+      ],
+      "structureNotes": "没 is a shortened form of 没有 in many phrases.",
+      "usageNotes": "Common positive reply.",
+      "examples": [
+        { "hanzi": "没有问题。", "pinyin": "méi yǒu wèn tí", "english": "There is no problem." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "survival-005",
+      "islandId": "survival",
+      "english": "I only speak a little Chinese.",
+      "meaning": "I only speak a little Chinese.",
+      "hanzi": "我只会说一点中文。",
+      "pinyin": "wǒ zhǐ huì shuō yì diǎn zhōng wén",
+      "pinyinNumbered": "wo3 zhi3 hui4 shuo1 yi4 dian3 zhong1 wen2",
+      "literal": "I only can speak a little Chinese.",
+      "difficulty": 3,
+      "tags": ["survival", "learning", "chinese"],
+      "patternIds": [],
+      "breakdown": [
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "I" },
+        { "hanzi": "只", "pinyin": "zhǐ", "meaning": "only" },
+        { "hanzi": "会", "pinyin": "huì", "meaning": "can / know how to" },
+        { "hanzi": "说", "pinyin": "shuō", "meaning": "speak" },
+        { "hanzi": "一点", "pinyin": "yì diǎn", "meaning": "a little" },
+        { "hanzi": "中文", "pinyin": "zhōng wén", "meaning": "Chinese language" }
+      ],
+      "structureNotes": "只会 means only know how to/can. 一点 means a little.",
+      "usageNotes": "Great real-world phrase for beginner interactions.",
+      "examples": [
+        { "hanzi": "我会说一点中文。", "pinyin": "wǒ huì shuō yì diǎn zhōng wén", "english": "I can speak a little Chinese." }
+      ],
+      "audioUrl": ""
+    },
+    {
+      "id": "survival-006",
+      "islandId": "survival",
+      "english": "I am learning Chinese.",
+      "meaning": "I am learning Chinese.",
+      "hanzi": "我在学中文。",
+      "pinyin": "wǒ zài xué zhōng wén",
+      "pinyinNumbered": "wo3 zai4 xue2 zhong1 wen2",
+      "literal": "I currently study Chinese.",
+      "difficulty": 2,
+      "tags": ["survival", "learning", "chinese"],
+      "patternIds": [],
+      "breakdown": [
+        { "hanzi": "我", "pinyin": "wǒ", "meaning": "I" },
+        { "hanzi": "在", "pinyin": "zài", "meaning": "currently doing" },
+        { "hanzi": "学", "pinyin": "xué", "meaning": "study / learn" },
+        { "hanzi": "中文", "pinyin": "zhōng wén", "meaning": "Chinese language" }
+      ],
+      "structureNotes": "在 + verb can mean currently doing the verb.",
+      "usageNotes": "Useful when explaining your learning effort.",
+      "examples": [
+        { "hanzi": "我想学中文。", "pinyin": "wǒ xiǎng xué zhōng wén", "english": "I want to learn Chinese." }
+      ],
+      "audioUrl": ""
+    }
+  ],
+  "starterPracticePlan": {
+    "dailyMinimum": [
+      "Practice 10 minutes of active recall.",
+      "Listen/shadow 10 minutes from one island.",
+      "Use at least 3 Mandarin sentences in real life or aloud."
+    ],
+    "week1": [
+      "Relationship 001-006",
+      "Food 001-003",
+      "Routine 003-006",
+      "Conversation 001-003"
+    ],
+    "week2": [
+      "Food 004-012",
+      "Home 001-008",
+      "Opinions 001-005"
+    ],
+    "week3": [
+      "Work 001-010",
+      "Shopping 001-004",
+      "Time 001-004"
+    ],
+    "week4": [
+      "Survival 001-006",
+      "Review weak sentences",
+      "Start adding personalized custom sentences"
+    ]
+  }
+}
