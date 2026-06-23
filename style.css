@@ -558,10 +558,23 @@ body {
   text-overflow: ellipsis;
 }
 
-.sentence-row-hanzi {
-  font-family: var(--font-hanzi);
+.sentence-row-pinyin {
   font-size: 0.9rem;
-  color: var(--hanzi);
+  color: var(--pinyin);
+  line-height: 1.35;
+}
+
+.sentence-row-meta {
+  font-size: 0.75rem;
+  color: var(--text-faint);
+  margin-top: 2px;
+}
+
+.sentence-detail-english {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  line-height: 1.35;
 }
 
 .mastery-dot {

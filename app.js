@@ -230,8 +230,8 @@ function renderSentenceRow(s, showIsland = false) {
       ${renderMasteryDot(s.id)}
       <div class="sentence-row-content">
         <div class="sentence-row-english">${escapeHtml(s.english)}</div>
-        <div class="sentence-row-hanzi">${escapeHtml(s.hanzi)}</div>
-        ${island ? `<div class="sentence-row-hanzi" style="font-family:var(--font);font-size:0.75rem;color:var(--text-faint)">${escapeHtml(island.name)}</div>` : ''}
+        <div class="sentence-row-pinyin">${escapeHtml(s.pinyin)}</div>
+        ${island ? `<div class="sentence-row-meta">${escapeHtml(island.name)}</div>` : ''}
       </div>
       ${renderFavStar(s.id)}
     </button>`;
@@ -291,11 +291,12 @@ function renderMasteryButtons(sentenceId, selectedMastery) {
     </button>`).join('');
 }
 
-function renderRevealContent(sentence, showMastery = true) {
+function renderRevealContent(sentence, { showMastery = true, showHeader = true } = {}) {
   const mastery = getMastery(sentence.id);
   return `
-    <div class="hanzi-large">${escapeHtml(sentence.hanzi)}</div>
-    <div class="pinyin-large">${escapeHtml(sentence.pinyin)}</div>
+    ${showHeader ? `
+      <div class="hanzi-large">${escapeHtml(sentence.hanzi)}</div>
+      <div class="pinyin-large">${escapeHtml(sentence.pinyin)}</div>` : ''}
     ${sentence.literal ? `<div class="literal-text">Literal: ${escapeHtml(sentence.literal)}</div>` : ''}
     ${sentence.structureNotes ? `
       <div class="detail-section">
@@ -531,8 +532,13 @@ function renderSentenceDetail(sentenceId) {
   main.innerHTML = `
     <div class="sentence-detail">
       <div class="flashcard-label">${escapeHtml(island?.name || '')}</div>
-      <div style="font-size:1.1rem;font-weight:600;margin-bottom:16px">${escapeHtml(sentence.english)}</div>
-      ${renderRevealContent(sentence)}
+      <div class="sentence-detail-english">${escapeHtml(sentence.english)}</div>
+      <div class="pinyin-large">${escapeHtml(sentence.pinyin)}</div>
+      <div class="detail-section">
+        <h4>Characters</h4>
+        <div class="hanzi-large">${escapeHtml(sentence.hanzi)}</div>
+      </div>
+      ${renderRevealContent(sentence, { showHeader: false })}
       <div class="sentence-detail-actions">
         <a href="#practice-active?mode=single&sentence=${sentenceId}" class="btn btn-primary">Practice</a>
         <button type="button" class="btn btn-ghost" id="speak-btn-2">🔊 Listen</button>
