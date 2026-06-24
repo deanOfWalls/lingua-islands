@@ -90,10 +90,10 @@ export class PracticeActiveView extends BaseView {
     shell.queryMain('#reveal-btn')?.addEventListener('click', () => {
       practice.revealFlashcard();
       rerender();
-      audio.speakHanzi(sentence.hanzi);
+      audio.speakSentence(sentence);
     });
-    shell.queryMain('#speak-normal')?.addEventListener('click', () => audio.speakHanzi(sentence.hanzi, 0.85));
-    shell.queryMain('#speak-slow')?.addEventListener('click', () => audio.speakHanzi(sentence.hanzi, 0.55));
+    shell.queryMain('#speak-normal')?.addEventListener('click', () => audio.speakSentence(sentence, 'normal'));
+    shell.queryMain('#speak-slow')?.addEventListener('click', () => audio.speakSentence(sentence, 'slow'));
     shell.queryMain('#next-btn')?.addEventListener('click', () => this.handleNext());
     shell.queryMain('#skip-btn')?.addEventListener('click', () => this.handleSkip());
     shell.queryMain('#detail-btn')?.addEventListener('click', () => {
@@ -176,10 +176,10 @@ export class ShadowView extends BaseView {
       </div>`;
 
     if (session.step === 'listen') {
-      window.setTimeout(() => audio.speakHanzi(sentence.hanzi, 0.8), 300);
+      window.setTimeout(() => audio.speakSentence(sentence), 300);
     }
 
-    shell.queryMain('#shadow-replay')?.addEventListener('click', () => audio.speakHanzi(sentence.hanzi, 0.8));
+    shell.queryMain('#shadow-replay')?.addEventListener('click', () => audio.speakSentence(sentence));
     shell.queryMain('#shadow-next')?.addEventListener('click', () => {
       practice.advanceShadowStep();
       rerender();

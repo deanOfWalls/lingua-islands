@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "generate-audio": ".venv-audio/bin/python scripts/generate-audio.py || python scripts/generate-audio.py"
   },
   "devDependencies": {
     "typescript": "^5.7.2"

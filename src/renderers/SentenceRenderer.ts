@@ -51,6 +51,10 @@ export class SentenceRenderer {
         <div class="flashcard-label">${escapeHtml(islandName)}</div>
         <div class="sentence-detail-english">${escapeHtml(sentence.english)}</div>
         <div class="pinyin-large">${escapeHtml(sentence.pinyin)}</div>
+        <div class="audio-controls">
+          <button type="button" class="btn btn-sm btn-ghost" id="speak-normal">🔊 Normal</button>
+          <button type="button" class="btn btn-sm btn-ghost" id="speak-slow">🐢 Slow</button>
+        </div>
         <div class="detail-section">
           <h4>Characters</h4>
           <div class="hanzi-large">${escapeHtml(sentence.hanzi)}</div>
@@ -58,7 +62,6 @@ export class SentenceRenderer {
         ${this.renderRevealContent(sentence, { showHeader: false })}
         <div class="sentence-detail-actions">
           <a href="#practice-active?mode=single&sentence=${sentence.id}" class="btn btn-primary">Practice</a>
-          <button type="button" class="btn btn-ghost" id="speak-btn-2">🔊 Listen</button>
         </div>
       </div>`;
   }

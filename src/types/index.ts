@@ -65,6 +65,10 @@ export interface Sentence {
   structureNotes: string;
   usageNotes: string;
   examples: SentenceExample[];
+  /** Optional TTS-only text when hanzi trips the synthesizer (display hanzi unchanged). */
+  ttsText?: string;
+  /** SAPI pinyin phoneme string for edge-tts SSML (e.g. zai4 shuo1 yi2 bian4). */
+  ttsSapi?: string;
   audioUrl: string;
 }
 

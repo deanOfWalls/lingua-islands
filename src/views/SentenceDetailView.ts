@@ -29,8 +29,9 @@ export class SentenceDetailView extends BaseView {
       progress.toggleFavorite(sentenceId);
       rerender();
     });
-    shell.queryMain('#speak-btn')?.addEventListener('click', () => audio.speakHanzi(sentence.hanzi));
-    shell.queryMain('#speak-btn-2')?.addEventListener('click', () => audio.speakHanzi(sentence.hanzi));
+    shell.queryMain('#speak-btn')?.addEventListener('click', () => audio.speakSentence(sentence));
+    shell.queryMain('#speak-normal')?.addEventListener('click', () => audio.speakSentence(sentence, 'normal'));
+    shell.queryMain('#speak-slow')?.addEventListener('click', () => audio.speakSentence(sentence, 'slow'));
 
     this.bindMasteryButtons();
   }

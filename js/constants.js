@@ -18,4 +18,10 @@ export const BACK_ROUTES = {
 };
 export const NAV_VIEWS = ['home', 'islands', 'practice', 'patterns', 'search'];
 export const DATA_URL = 'starter-pack.json';
+/** Microsoft Edge neural voice — mainland Putonghua, clear male tone. */
+export const TTS_VOICE = 'zh-CN-YunjianNeural';
+/** MP3s are generated ~15% slower; normal play compensates toward natural pace. */
+export const AUDIO_NORMAL_PLAYBACK = 1.28;
+/** Slower for shadowing; keep above ~0.75 to avoid audio artifacts. */
+export const AUDIO_SLOW_PLAYBACK = 0.78;
 //# sourceMappingURL=constants.js.map
