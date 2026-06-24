@@ -1,0 +1,21 @@
+/** Browser speech synthesis for Mandarin audio. */
+export class AudioService {
+  private readonly synth: SpeechSynthesis | null;
+
+  constructor(synth: SpeechSynthesis | null = window.speechSynthesis) {
+    this.synth = synth;
+  }
+
+  speakHanzi(text: string, rate = 0.85): void {
+    if (!this.synth) return;
+    this.synth.cancel();
+    const utterance = new SpeechSynthesisUtterance(text.replace(/[。！？，、]/g, ''));
+    utterance.lang = 'zh-CN';
+    utterance.rate = rate;
+    this.synth.speak(utterance);
+  }
+
+  stop(): void {
+    this.synth?.cancel();
+  }
+}

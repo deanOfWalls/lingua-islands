@@ -66,6 +66,7 @@
       "id": "svo",
       "name": "Subject + Verb + Object",
       "formula": "[subject] + [verb] + [object]",
+      "formulaPinyin": "[subject] + [verb] + [object]",
       "meaning": "Basic sentence order for many Mandarin sentences.",
       "notes": "Often similar to English. Pronouns do not change form like I/me/my in English."
     },
@@ -73,6 +74,7 @@
       "id": "ma-question",
       "name": "Yes/No Question With 吗",
       "formula": "[statement] + 吗？",
+      "formulaPinyin": "[statement] + ma?",
       "meaning": "Turns many statements into yes/no questions.",
       "notes": "Do not use 吗 with question words like 什么 or 哪里."
     },
@@ -80,6 +82,7 @@
       "id": "le-change",
       "name": "Change Of State With 了",
       "formula": "[situation] + 了",
+      "formulaPinyin": "[situation] + le",
       "meaning": "Shows something has become true or changed state.",
       "notes": "At beginner level, learn it in fixed phrases like 我饿了, 我累了, 我困了."
     },
@@ -87,6 +90,7 @@
       "id": "wo-yao-action",
       "name": "我要 + Action",
       "formula": "我要 + [verb/action]",
+      "formulaPinyin": "wǒ yào + [verb/action]",
       "meaning": "I want to / I am going to.",
       "notes": "要 can mean want, need, or intend depending on context."
     },
@@ -94,6 +98,7 @@
       "id": "wo-xiang-action",
       "name": "我想 + Action",
       "formula": "我想 + [verb/action]",
+      "formulaPinyin": "wǒ xiǎng + [verb/action]",
       "meaning": "I want to / I feel like / I would like to.",
       "notes": "Softer than 要. Also means miss when used with a person, as in 我想你了."
     },
@@ -101,6 +106,7 @@
       "id": "ni-xiang-question",
       "name": "你想 + Action + 什么",
       "formula": "你想 + [verb] + 什么？",
+      "formulaPinyin": "nǐ xiǎng + [verb] + shén me?",
       "meaning": "What do you want to... ?",
       "notes": "High-value pattern for food, watching, buying, doing, and going."
     },
@@ -108,6 +114,7 @@
       "id": "hen-adjective",
       "name": "很 + Adjective",
       "formula": "[subject] + 很 + [adjective]",
+      "formulaPinyin": "[subject] + hěn + [adjective]",
       "meaning": "Subject is adjective.",
       "notes": "很 often acts as a natural linker before adjectives. It does not always mean very strongly."
     },
@@ -115,6 +122,7 @@
       "id": "verb-yixia",
       "name": "Verb + 一下",
       "formula": "[verb] + 一下",
+      "formulaPinyin": "[verb] + yí xià",
       "meaning": "Do an action briefly / once / for a moment.",
       "notes": "Makes requests sound more casual and softer."
     },
@@ -122,6 +130,7 @@
       "id": "zai-location",
       "name": "Location With 在",
       "formula": "[thing/person] + 在 + [place/question location]",
+      "formulaPinyin": "[thing/person] + zài + [place/question location]",
       "meaning": "Something/someone is located somewhere.",
       "notes": "在哪里 means where."
     },
@@ -129,6 +138,7 @@
       "id": "de-possession",
       "name": "Possession With 的",
       "formula": "[owner] + 的 + [thing]",
+      "formulaPinyin": "[owner] + de + [thing]",
       "meaning": "Owner's thing / my / your / his / her.",
       "notes": "我的手机 = my phone."
     },
@@ -136,6 +146,7 @@
       "id": "keyi-request",
       "name": "Can You With 可以",
       "formula": "你可以 + [action] + 吗？",
+      "formulaPinyin": "nǐ kě yǐ + [action] + ma?",
       "meaning": "Can you / may you do something?",
       "notes": "Useful for polite requests."
     },
@@ -143,6 +154,7 @@
       "id": "rang-wo-action",
       "name": "Let Me With 让我",
       "formula": "让我 + [action]",
+      "formulaPinyin": "ràng wǒ + [action]",
       "meaning": "Let me do something.",
       "notes": "Common in phrases like 让我看看 and 让我想一下."
     },
@@ -150,6 +162,7 @@
       "id": "tai-adjective-le",
       "name": "Too Adjective With 太...了",
       "formula": "太 + [adjective] + 了",
+      "formulaPinyin": "tài + [adjective] + le",
       "meaning": "Too / very adjective.",
       "notes": "Common for reactions: 太辣了, 太贵了, 太好了."
     },
@@ -157,6 +170,7 @@
       "id": "negative-bu",
       "name": "Negation With 不",
       "formula": "不 + [verb/adjective]",
+      "formulaPinyin": "bù + [verb/adjective]",
       "meaning": "Not / do not.",
       "notes": "Common negation. 不 changes tone before fourth tone in speech, but pinyin may still be written as bù."
     },
@@ -164,6 +178,7 @@
       "id": "mei-you",
       "name": "Do Not Have / There Is Not With 没有",
       "formula": "没有 + [thing/action]",
+      "formulaPinyin": "méi yǒu + [thing/action]",
       "meaning": "Do not have / there is not / did not.",
       "notes": "Useful beginner phrase: 没有 = don't have / no."
     }

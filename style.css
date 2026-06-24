@@ -521,6 +521,107 @@ body {
   transition: width 0.3s;
 }
 
+.pattern-formula-pinyin {
+  font-size: clamp(1rem, 4vw, 1.15rem);
+  font-weight: 600;
+  color: var(--pinyin);
+  background: var(--accent-light);
+  padding: 10px 12px;
+  border-radius: var(--radius-xs);
+  margin-top: 8px;
+  line-height: 1.45;
+}
+
+.pattern-formula-hanzi,
+.pattern-example-hanzi {
+  font-family: var(--font-hanzi);
+  font-size: 0.9rem;
+  color: var(--hanzi);
+  padding: 8px 0 0;
+}
+
+.pattern-meaning {
+  font-size: 0.9rem;
+  color: var(--text);
+  margin-top: 10px;
+}
+
+.pattern-notes {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+.pattern-hanzi-details {
+  margin-top: 8px;
+}
+
+.pattern-hanzi-details summary {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-faint);
+  cursor: pointer;
+  list-style: none;
+  padding: 4px 0;
+}
+
+.pattern-hanzi-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.pattern-hanzi-details summary::before {
+  content: "▸ ";
+}
+
+.pattern-hanzi-details[open] summary::before {
+  content: "▾ ";
+}
+
+.pattern-hanzi-details--compact {
+  margin-top: 4px;
+}
+
+.pattern-card--detail .pattern-formula-pinyin {
+  font-size: clamp(1.1rem, 5vw, 1.35rem);
+}
+
+.pattern-example-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pattern-example {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xs);
+  padding: 12px;
+  font-family: var(--font);
+  cursor: pointer;
+}
+
+.pattern-example:active {
+  border-color: var(--accent);
+  background: var(--accent-light);
+}
+
+.pattern-example-pinyin {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--pinyin);
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.pattern-example-english {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* legacy — kept for any remaining refs */
 .pattern-formula {
   font-family: var(--font-hanzi), var(--font);
   font-size: 0.95rem;
