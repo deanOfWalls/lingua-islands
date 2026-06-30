@@ -1,3 +1,4 @@
+import { APP_NAME } from '../constants.js';
 import { BaseView } from './BaseView.js';
 
 export class HomeView extends BaseView {
@@ -5,13 +6,13 @@ export class HomeView extends BaseView {
     const { shell, repository, statsRenderer } = this.ctx;
     const stats = repository.getOverallStats();
 
-    shell.setTitle('LifeLingo');
+    shell.setTitle(APP_NAME);
     shell.setBackVisible(false);
     shell.setActions('');
 
     shell.main.innerHTML = `
       <div class="hero-brand">
-        <h2>LifeLingo</h2>
+        <h2>${APP_NAME}</h2>
         <p>Learn the language of your own life.</p>
       </div>
       ${statsRenderer.renderOverallStats(stats)}

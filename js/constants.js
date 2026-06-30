@@ -1,4 +1,11 @@
+export const APP_NAME = 'Lingua Islands';
 export const STORAGE_KEY = 'lifelingo-progress';
+export const THEME_STORAGE_KEY = 'lingua-islands-theme';
+/** Browser UI / status bar color per theme (WCAG-safe header backgrounds). */
+export const THEME_COLOR = {
+    light: '#0a4f49',
+    dark: '#0d2824',
+};
 export const MASTERY_LABELS = {
     0: 'New',
     1: 'Recognize',

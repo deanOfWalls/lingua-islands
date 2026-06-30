@@ -1,6 +1,18 @@
 import type { MasteryLevel } from './types/index.js';
 
+export const APP_NAME = 'Lingua Islands';
+
 export const STORAGE_KEY = 'lifelingo-progress';
+
+export const THEME_STORAGE_KEY = 'lingua-islands-theme';
+
+export type ThemePreference = 'light' | 'dark';
+
+/** Browser UI / status bar color per theme (WCAG-safe header backgrounds). */
+export const THEME_COLOR: Record<ThemePreference, string> = {
+  light: '#0a4f49',
+  dark: '#0d2824',
+};
 
 export const MASTERY_LABELS: Record<MasteryLevel, string> = {
   0: 'New',

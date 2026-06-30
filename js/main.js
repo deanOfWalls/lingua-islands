@@ -1,4 +1,5 @@
-import { LifeLingoApp } from './app/LifeLingoApp.js';
+import { LinguaIslandsApp } from './app/LinguaIslandsApp.js';
+import { ThemeService } from './services/ThemeService.js';
 function queryRequired(selector) {
     const element = document.querySelector(selector);
     if (!element) {
@@ -13,8 +14,11 @@ function getShellElements() {
         backBtn: queryRequired('#back-btn'),
         topActions: queryRequired('#top-actions'),
         bottomNav: queryRequired('#bottom-nav'),
+        themeToggle: queryRequired('#theme-toggle'),
     };
 }
-const app = new LifeLingoApp(getShellElements());
+const theme = new ThemeService();
+theme.init(getShellElements().themeToggle);
+const app = new LinguaIslandsApp(getShellElements());
 app.init();
 //# sourceMappingURL=main.js.map

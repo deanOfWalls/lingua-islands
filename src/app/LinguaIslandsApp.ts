@@ -1,4 +1,3 @@
-import { DATA_URL } from '../constants.js';
 import { CurriculumRepository } from '../repositories/CurriculumRepository.js';
 import { MasteryRenderer } from '../renderers/MasteryRenderer.js';
 import { PatternRenderer } from '../renderers/PatternRenderer.js';
@@ -10,6 +9,7 @@ import { PracticeSessionService } from '../services/PracticeSessionService.js';
 import { ProgressStore } from '../services/ProgressStore.js';
 import { SearchService } from '../services/SearchService.js';
 import { ShellController } from '../ui/ShellController.js';
+import { DATA_URL } from '../constants.js';
 import type { AppContext } from './AppContext.js';
 import type { PracticeParams, ShellElements, StarterPack } from '../types/index.js';
 import { HomeView } from '../views/HomeView.js';
@@ -20,7 +20,7 @@ import { SearchView } from '../views/SearchView.js';
 import { SentenceDetailView } from '../views/SentenceDetailView.js';
 
 /** Application root: wires services, views, and routing. */
-export class LifeLingoApp {
+export class LinguaIslandsApp {
   private readonly progress = new ProgressStore();
   private readonly router = new Router();
   private readonly audio = new AudioService();

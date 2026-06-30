@@ -1,22 +1,36 @@
-/* LifeLingo — mobile-first styles */
+/* Lingua Islands — mobile-first styles */
 
-:root {
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+
   --bg: #f4f1ea;
   --bg-card: #ffffff;
   --bg-elevated: #fffdf9;
   --text: #1a2422;
-  --text-muted: #5c6b68;
-  --text-faint: #8a9694;
+  --text-muted: #4f5f5c;
+  --text-faint: #6b7875;
   --accent: #0f6b63;
   --accent-light: #e6f3f1;
   --accent-dark: #0a4f49;
   --accent-glow: rgba(15, 107, 99, 0.15);
+  --on-accent: #ffffff;
+  --top-bar-bg: #0a4f49;
+  --top-bar-fg: #ffffff;
+  --top-bar-active: rgba(255, 255, 255, 0.12);
   --hanzi: #0d3d38;
-  --pinyin: #3d6b66;
+  --pinyin: #2f5c56;
   --border: #e2ddd4;
   --border-strong: #cdc7bc;
   --shadow: 0 2px 12px rgba(26, 36, 34, 0.06);
   --shadow-lg: 0 8px 32px rgba(26, 36, 34, 0.1);
+  --nav-shadow: 0 -4px 20px rgba(26, 36, 34, 0.06);
+  --favorite: #946b00;
+  --mastery-0: #7a8a87;
+  --mastery-1: #946b00;
+  --mastery-2: #b85c0c;
+  --mastery-3: #1f7a52;
+  --mastery-4: #0f6b63;
   --radius: 16px;
   --radius-sm: 12px;
   --radius-xs: 8px;
@@ -28,11 +42,38 @@
   --safe-right: env(safe-area-inset-right, 0px);
   --font: "DM Sans", system-ui, -apple-system, sans-serif;
   --font-hanzi: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
-  --mastery-0: #9aa8a5;
-  --mastery-1: #c4a035;
-  --mastery-2: #d97b2b;
-  --mastery-3: #2d9d6e;
-  --mastery-4: #0f6b63;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #101816;
+  --bg-card: #1a2321;
+  --bg-elevated: #232d2b;
+  --text: #edf1f0;
+  --text-muted: #b3c2be;
+  --text-faint: #93a5a1;
+  --accent: #6bc4bb;
+  --accent-light: #1e3330;
+  --accent-dark: #8ad4cc;
+  --accent-glow: rgba(107, 196, 187, 0.22);
+  --on-accent: #052019;
+  --top-bar-bg: #0d2824;
+  --top-bar-fg: #ffffff;
+  --top-bar-active: rgba(255, 255, 255, 0.12);
+  --hanzi: #d8ebe8;
+  --pinyin: #94cfc7;
+  --border: #2f3d3a;
+  --border-strong: #455955;
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.45);
+  --nav-shadow: 0 -4px 20px rgba(0, 0, 0, 0.35);
+  --favorite: #e8b84a;
+  --mastery-0: #8a9a97;
+  --mastery-1: #e8b84a;
+  --mastery-2: #f0a060;
+  --mastery-3: #5ecf98;
+  --mastery-4: #6bc4bb;
 }
 
 *,
@@ -60,6 +101,19 @@ body {
   touch-action: manipulation;
 }
 
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.top-bar :focus-visible {
+  outline-color: var(--top-bar-fg);
+}
+
 #app {
   display: flex;
   flex-direction: column;
@@ -80,8 +134,8 @@ body {
   gap: 8px;
   height: var(--top-bar-h);
   padding: 0 12px;
-  background: var(--accent-dark);
-  color: #fff;
+  background: var(--top-bar-bg);
+  color: var(--top-bar-fg);
   flex-shrink: 0;
 }
 
@@ -104,14 +158,14 @@ body {
   margin-left: -8px;
   border: none;
   background: transparent;
-  color: #fff;
+  color: var(--top-bar-fg);
   border-radius: var(--radius-xs);
   cursor: pointer;
   flex-shrink: 0;
 }
 
 .back-btn:active {
-  background: rgba(255, 255, 255, 0.12);
+  background: var(--top-bar-active);
 }
 
 .back-btn.hidden {
@@ -139,11 +193,11 @@ body {
 }
 
 .icon-btn:active {
-  background: rgba(255, 255, 255, 0.12);
+  background: var(--top-bar-active);
 }
 
 .top-bar .icon-btn {
-  color: #fff;
+  color: var(--top-bar-fg);
 }
 
 /* ── Main content ── */
@@ -173,7 +227,7 @@ body {
   padding-right: var(--safe-right);
   background: var(--bg-card);
   border-top: 1px solid var(--border);
-  box-shadow: 0 -4px 20px rgba(26, 36, 34, 0.06);
+  box-shadow: var(--nav-shadow);
 }
 
 .nav-item {
@@ -207,7 +261,7 @@ body {
 
 .nav-item--primary svg {
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
   border-radius: 50%;
   padding: 8px;
   width: 40px;
@@ -350,7 +404,7 @@ body {
 
 .btn-primary {
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
   box-shadow: 0 4px 14px var(--accent-glow);
 }
 
@@ -697,7 +751,33 @@ body {
 }
 
 .fav-star.active {
-  color: #e8a317;
+  color: var(--favorite);
+}
+
+.fav-star-large {
+  font-size: 1.25rem;
+}
+
+.fav-star-large.active {
+  color: var(--favorite);
+}
+
+/* ── Theme toggle ── */
+
+.theme-toggle .icon-sun {
+  display: none;
+}
+
+.theme-toggle .icon-moon {
+  display: block;
+}
+
+[data-theme="dark"] .theme-toggle .icon-sun {
+  display: block;
+}
+
+[data-theme="dark"] .theme-toggle .icon-moon {
+  display: none;
 }
 
 /* ── Flashcard / practice ── */

@@ -1,4 +1,4 @@
-/** Domain and application types for LifeLingo. */
+/** Domain and application types for Lingua Islands. */
 
 export type MasteryLevel = 0 | 1 | 2 | 3 | 4;
 
@@ -144,4 +144,5 @@ export interface ShellElements {
   backBtn: HTMLButtonElement;
   topActions: HTMLElement;
   bottomNav: HTMLElement;
+  themeToggle: HTMLButtonElement;
 }

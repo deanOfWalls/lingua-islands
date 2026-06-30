@@ -1,4 +1,5 @@
-import { LifeLingoApp } from './app/LifeLingoApp.js';
+import { LinguaIslandsApp } from './app/LinguaIslandsApp.js';
+import { ThemeService } from './services/ThemeService.js';
 import type { ShellElements } from './types/index.js';
 
 function queryRequired<T extends Element>(selector: string): T {
@@ -16,8 +17,12 @@ function getShellElements(): ShellElements {
     backBtn: queryRequired<HTMLButtonElement>('#back-btn'),
     topActions: queryRequired<HTMLElement>('#top-actions'),
     bottomNav: queryRequired<HTMLElement>('#bottom-nav'),
+    themeToggle: queryRequired<HTMLButtonElement>('#theme-toggle'),
   };
 }
 
-const app = new LifeLingoApp(getShellElements());
+const theme = new ThemeService();
+theme.init(getShellElements().themeToggle);
+
+const app = new LinguaIslandsApp(getShellElements());
 app.init();
